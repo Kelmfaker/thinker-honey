@@ -300,14 +300,7 @@ transform: scale(1.1);
 /* Media Queries */
  @media (max-width: 1200px) { 
 
-*{
-    font-family:'Ara Alm Bon';
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
 
-}
 
 .main h2 { font-size: 1.6em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 1.8em; /* Adjust font size for smaller screens */ margin-left: 300px; } .main h3 { font-size: 1.2em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 1em; /* Adjust font size for smaller screens */ }
 
@@ -319,14 +312,7 @@ transform: scale(1.1);
     } 
 }
  @media (max-width: 768px) {
-    *{
-        font-family:'Ara Alm Bon';
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        scroll-behavior: smooth;
-    
-    }
+
 
     .main h2 { font-size: 1.4em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 1.6em; /* Adjust font size for smaller screens */ margin-left: 100px; } .main h3 { font-size: 1em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.9em; /* Adjust font size for smaller screens */ }
     .main { background-size: contain; /* تغيير حجم الصورة لتناسب الشاشة */ padding: 30px; /* تقليل الحشو للشاشات الصغيرة */ }
@@ -338,15 +324,8 @@ transform: scale(1.1);
 .logo { font-size: 1.3em; /* Adjust font size for smaller screens */ } .navigation a { font-size: 0.9em; /* Adjust font size for smaller screens */ } .main h2 { font-size: 1.6em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 2em; /* Adjust font size for smaller screens */ } .main h3 { font-size: 1.2em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 1em; /* Adjust font size for smaller screens */ } .footer-title { font-size: 1.2em; /* Adjust font size for smaller screens */ } .footer .social-icon a { font-size: 1.2em; /* Adjust font size for smaller screens */ }
     } 
     @media (max-width: 480px) { 
-        *{
-            font-family:'Ara Alm Bon';
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        
-        }
-        .main h2 { font-size: 1.2em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 1.4em; /* Adjust font size for smaller screens */ margin-left: 50px; } .main h3 { font-size: 0.9em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.8em; /* Adjust font size for smaller screens */ }
+       
+        .main h2 { font-size: 1em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 1.2em; /* Adjust font size for smaller screens */ margin-left: 50px; } .main h3 { font-size: 0.7em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.8em; /* Adjust font size for smaller screens */ }
         .main { background-size: contain; /* تغيير حجم الصورة لتناسب الشاشة */ padding: 20px; /* تقليل الحشو للشاشات الصغيرة */ }
         header { padding: 10px 20px; }
          .main h2 span { margin-left: 50px; }
