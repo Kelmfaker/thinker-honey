@@ -285,3 +285,23 @@ transform: scale(1.1);
     padding: 0 12px 0 0;
     color: bisque;
 }
+
+
+/* Media Queries */
+ @media (max-width: 1200px) { 
+    header { padding: 10px 100px; } 
+    .main h2 span { margin-left: 300px; 
+    } 
+}
+ @media (max-width: 768px) {
+     header { padding: 10px 50px; } 
+     .main h2 span { margin-left: 100px; } 
+     .main h2 { color: brown; } 
+.main h3 { color: brown;}
+    } 
+    @media (max-width: 480px) { 
+        header { padding: 10px 20px; }
+         .main h2 span { margin-left: 50px; }
+         .main h2 { color: brown; } 
+.main h3 { color: brown;}
+         }
