@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thinker Honey</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Thinker Honey</a>
+        <nav class="navigation">
+            <a href="{{ url_for('index') }}">الرئيسية</a>
+            <a href="{{ url_for('store') }}">المتجر</a>
+            <a href="{{ url_for('contact') }}">تواصل معنا</a>
+        </nav>
+    </header>
+    <section class="main" id="main">
+        <div>
+            <h2>مرحبا بكم في متجر<br><span>عسل المفكر</span></h2>
+            <h3>بيع أجود أنواع العسل الحر</h3>
+            <a href="{{ url_for('store') }}" class="main-btn">تسوق اللآن</a>
+            <div class="social-icon">
+                <a href="https://www.instagram.com/thinker_honey/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61567279060085"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://wa.me/c/212708318135"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        {% block content %}{% endblock %}
+    </section>
+    <footer class="footer">
+        <p class="footer-title">حقوق الطبع والنشر @ <span>كوثر المفكر</span></p>
+        <div class="social-icon">
+            <a href="https://www.instagram.com/thinker_honey/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61567279060085"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/c/212708318135"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

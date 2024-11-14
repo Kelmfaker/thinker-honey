@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>المتجر</h2>
+<!-- محتوى المتجر هنا -->
+<section class="store" id="store">
+    <div class="products">
+        {% for product in products %}
+        <div class="product">
+            <div class="prd-img">
+                <img src="{{ url_for('static', filename=product[4]) }}" alt="{{ product[1] }}">
+            </div>
+            <div class="prd-description">
+                <strong class="prd-title">
+                <span>{{ product[1] }}</span>
+                <a href="#" class="more">المزيد</a>
+                </strong>
+                <div class="more-des">
+                <p class="description">{{ product[3] }}</p>
+                <p class="quantity">الكمية المتاحة: {{ product[5] }}</p>
+                </div>
+                <form action="{{ url_for('add_to_cart') }}" method="post" class="cart-form">
+                    <input type="hidden" name="product_id" value="{{ product[0] }}">
+                    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                    <button type="submit" class="add-to-cart">إضافة إلى السلة</button>
+                </form>
+           
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</section>
+
+{% endblock %}
