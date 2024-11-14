@@ -327,7 +327,7 @@ transform: scale(1.1);
        .social-icon a{  font-size: 1.3em;
         padding: 0 12px 0 0;}
         .main h2 { font-size: 1em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 0.4em; /* Adjust font size for smaller screens */ margin-left: 50px; } .main h3 { font-size: 0.5em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.5em; /* Adjust font size for smaller screens */ }
-        .main { background-size:cover; padding-left: -20px; padding-bottom: -30px; /* تغيير حجم الصورة لتناسب الشاشة */ padding: 20px; /* تقليل الحشو للشاشات الصغيرة */ }
+        .main {background-image: url(img/phone\ img.jpg); background-size:cover;  /* تغيير حجم الصورة لتناسب الشاشة */ padding: 20px; /* تقليل الحشو للشاشات الصغيرة */ }
         header { padding: 10px 20px; }
          .main h2 span { margin-left: 50px; }
          .main h2 { color: brown; } 
