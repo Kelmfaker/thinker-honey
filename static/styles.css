@@ -1,17 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kufam:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reem+Kufi+Ink&display=swap');
 
-.kufam-uniquifier {
+/*.kufam-uniquifier {
     font-family: "Kufam", sans-serif;
     font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal;
-  }
+  } */
 
   
 *{
-    font-family: "Kufam", sans-serif;
-    margin: 0;
+    font-family: "Kufam", sans-serif; /* تأكد من تحديد الخط الافتراضي */    margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -183,7 +182,7 @@ transform: scale(1.1);
     font-size: 0.9em;
     color: rgb(50, 30, 6);
     text-align: justify;
-    max-height: 7em; /* تحديد الحد الأقصى للارتفاع */
+    max-height: 5em; /* تحديد الحد الأقصى للارتفاع */
     /* max-width: 400px;  تحديد الحد الأقصى للعرض */ 
      overflow: hidden; /* إخفاء النص الزائد */ 
 }
@@ -312,7 +311,8 @@ transform: scale(1.1);
     } 
 }
  @media (max-width: 768px) {
-
+    .social-icon a{  font-size: 1.3em;
+        padding: 0 12px 0 0;}
 
     .main h2 { font-size: 1.4em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 1.6em; /* Adjust font size for smaller screens */ margin-left: 100px; } .main h3 { font-size: 1em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.9em; /* Adjust font size for smaller screens */ }
     .main { background-size: contain; /* تغيير حجم الصورة لتناسب الشاشة */ padding: 30px; /* تقليل الحشو للشاشات الصغيرة */ }
@@ -324,9 +324,10 @@ transform: scale(1.1);
 .logo { font-size: 1.3em; /* Adjust font size for smaller screens */ } .navigation a { font-size: 0.9em; /* Adjust font size for smaller screens */ } .main h2 { font-size: 1.6em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 2em; /* Adjust font size for smaller screens */ } .main h3 { font-size: 1.2em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 1em; /* Adjust font size for smaller screens */ } .footer-title { font-size: 1.2em; /* Adjust font size for smaller screens */ } .footer .social-icon a { font-size: 1.2em; /* Adjust font size for smaller screens */ }
     } 
     @media (max-width: 480px) { 
-       
-        .main h2 { font-size: 1em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 1.2em; /* Adjust font size for smaller screens */ margin-left: 50px; } .main h3 { font-size: 0.7em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.8em; /* Adjust font size for smaller screens */ }
-        .main { background-size: contain; /* تغيير حجم الصورة لتناسب الشاشة */ padding: 20px; /* تقليل الحشو للشاشات الصغيرة */ }
+       .social-icon a{  font-size: 1.3em;
+        padding: 0 12px 0 0;}
+        .main h2 { font-size: 1em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 0.4em; /* Adjust font size for smaller screens */ margin-left: 50px; } .main h3 { font-size: 0.7em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.8em; /* Adjust font size for smaller screens */ }
+        .main { background-size:cover; /* تغيير حجم الصورة لتناسب الشاشة */ padding: 20px; /* تقليل الحشو للشاشات الصغيرة */ }
         header { padding: 10px 20px; }
          .main h2 span { margin-left: 50px; }
          .main h2 { color: brown; } 
