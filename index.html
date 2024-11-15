@@ -11,8 +11,8 @@
     <header>
         <a href="#" class="logo">Thinker Honey</a>
         <nav class="navigation">
-            <a href="#">الرئيسية</a>
-            <a href="#">المتجر</a>
+            <a href="#main">الرئيسية</a>
+            <a href="#store">المتجر</a>
 
             <a href="#">تواصل معنا</a>
         </nav>
@@ -30,7 +30,7 @@
         </div>
     </section>
     <section class="content">
-<div class="products">
+<div class="products" id="store">
    
     <!-- Product 1 -->
     <div class="product">
@@ -40,15 +40,17 @@
         <div class="prd-description">
             <strong class="prd-title">
             <span>عسل الدغموس</span>
-            <a href="#" class="more">المزيد</a>
+           <span>400Dh</span>
             </strong>
             <div class="more-des">
             <p class="description">عسل الدغموس يُعتبر من العسل الطبيعي الذي يُستخرج من زهور الدغموس، وهو يتميز بلونه الأحمر الغني بالمواد العضوية والمغذية. إليك بعض الفوائد الرئيسية لعسل الدغموس:
+                
             </p>
+            <a href="#" class="more">المزيد </a>
+
            <!-- <p class="quantity">الكمية المتاحة: 3</p> --> 
             
             </div>
-    
         </div>
         <form action="{{ url_for('add_to_cart') }}" method="post" class="cart-form">
             <input type="hidden" name="product_id" value="{{ product[0] }}">
@@ -66,12 +68,13 @@
         <div class="prd-description">
             <strong class="prd-title">
             <span>عسل الزعتر</span>
-            <a href="#" class="more">المزيد</a>
+           <span>300Dh</span>
             </strong>
             <div class="more-des">
             <p class="description">عسل الزعتر يحتوي على العديد من الفوائد الصحية التي تعزز الصحة العامة وتحسن الأداء البدني. إليك بعض الفوائد الرئيسية:
 
             </p>
+            <a href="#" class="more">المزيد</a>
            <!-- <p class="quantity">الكمية المتاحة: 3</p> --> 
             
             </div>
@@ -93,12 +96,12 @@
             <div class="prd-description">
                 <strong class="prd-title">
                 <span>عسل الكالبتوس</span>
-                <a href="#" class="more">المزيد</a>
+              <span>200Dh</span>
                 </strong>
                 <div class="more-des">
                 <p class="description">عسل الكالبتوس يُعتبر من أفضل أنواع العسل بفضل خصائصه الفريدة وفوائده المتعددة. إليك بعض الفوائد الرئيسية لعسل الكالبتوس:
                 </p>
-                
+                <a href="#" class="more">المزيد</a>
                 </div>
         
             </div>
@@ -118,12 +121,13 @@
         <div class="prd-description">
             <strong class="prd-title">
             <span>عسل السدر</span>
-            <a href="#" class="more">المزيد</a>
+           <span>300Dh</span>
             </strong>
             <div class="more-des">
             <p class="description">   عسل السدر يُعتبر من الأنواع الممتازة للعسل، وله العديد من الفوائد الصحية المذهلة. يتم استخراجه من رحيق زهور شجرة السدر (شجرة النبق) التي تنمو في مناطق معينة مثل اليمن والمملكة العربية السعودية. إليك بعض الفوائد الرئيسية لعسل السدر:
 
             </p>
+            <a href="#" class="more">المزيد</a>
            <!-- <p class="quantity">الكمية المتاحة: 3</p> --> 
             
             </div>
@@ -145,11 +149,12 @@
             <div class="prd-description">
                 <strong class="prd-title">
                 <span>عسل الزكوم</span>
-                <a href="#" class="more">المزيد</a>
+               <span>300Dh</span>
                 </strong>
                 <div class="more-des">
                 <p class="description"> عسل الزكوم هو نوع من العسل الطبيعي الذي يتم جمعه من زهور الزكوم. يتميز بلونه الأحمر الزاهي وطعمه اللذيذ، ويحتوي على العديد من الفوائد الصحية التي تجعله مفضلاً لدى الكثيرين. إليك بعض الفوائد الرئيسية لعسل الزكوم:
                 </p>
+                <a href="#" class="more">المزيد</a>
                <!-- <p class="quantity">الكمية المتاحة: 3</p> --> 
                 
                 </div>
@@ -172,11 +177,12 @@
         <div class="prd-description">
             <strong class="prd-title">
             <span>عسل الخروب</span>
-            <a href="#" class="more">المزيد</a>
+          <span>غير متوفر</span>
             </strong>
             <div class="more-des">
             <p class="description"> عسل الخروب هو نوع فريد من العسل يتم استخراجه من زهور شجرة الخروب. له العديد من الفوائد الصحية بفضل تركيبته الغذائية الغنية. إليك بعض الفوائد الرئيسية لعسل الخروب:
             </p>
+            <a href="#" class="more">المزيد</a>
            <!-- <p class="quantity">الكمية المتاحة: 3</p> --> 
             
             </div>
@@ -198,12 +204,13 @@
             <div class="prd-description">
                 <strong class="prd-title">
                 <span>عسل الأعشاب</span>
-                <a href="#" class="more">المزيد</a>
+              <span>250Dh</span>
                 </strong>
                 <div class="more-des">
                 <p class="description"> عسل الأعشاب يُعتبر من العناصر الطبيعية المفيدة للصحة، ويحتوي على مجموعة متنوعة من الفوائد الصحية. إليك بعض الفوائد الرئيسية لعسل الأعشاب:
 
                 </p>
+                <a href="#" class="more">المزيد</a>
                <!-- <p class="quantity">الكمية المتاحة: 3</p> --> 
                 
                 </div>
@@ -225,12 +232,13 @@
         <div class="prd-description">
             <strong class="prd-title">
             <span>عسل الشوك</span>
-            <a href="#" class="more">المزيد</a>
+         <span>200Dh</span>
             </strong>
             <div class="more-des">
             <p class="description"> عسل الشوك هو نوع من العسل يُستخرج من رحيق زهور الشوك، وله العديد من الفوائد الصحية المميزة. إليك وصف دقيق وحقيقي لفوائده:
 
             </p>
+            <a href="#" class="more">المزيد</a>
            <!-- <p class="quantity">الكمية المتاحة: 3</p> --> 
             
             </div>
@@ -253,12 +261,13 @@
             <div class="prd-description">
                 <strong class="prd-title">
                 <span>عسل الجبل</span>
-                <a href="#" class="more">المزيد</a>
+               <span>220Dh</span>
                 </strong>
                 <div class="more-des">
                 <p class="description"> عسل الجبل هو نوع من العسل الطبيعي الذي يُقطع من العسل الذي يتم تجميعه في الأشجار الطبيعية ويُعرف بفوائده العديدة والمهمة. إليك بعض الفوائد الرئيسية لعسل الجبل:
 
                 </p>
+                <a href="#" class="more">المزيد</a>
                <!-- <p class="quantity">الكمية المتاحة: 3</p> --> 
                 
                 </div>
@@ -280,12 +289,13 @@
             <div class="prd-description">
                 <strong class="prd-title">
                 <span>عسل الليمون</span>
-                <a href="#" class="more">المزيد</a>
+               <span>120Dh</span>
                 </strong>
                 <div class="more-des">
                 <p class="description"> عسل الليمون هو نوع مميز من العسل الطبيعي الذي يتم استخراجه من رحيق زهور أشجار الليمون. يتمتع عسل الليمون بنكهة منعشة وفوائد صحية عديدة. إليك بعض الفوائد الرئيسية لعسل الليمون:
 
                 </p>
+                <a href="#" class="more">المزيد</a>
                <!-- <p class="quantity">الكمية المتاحة: 3</p> --> 
                 
                 </div>
