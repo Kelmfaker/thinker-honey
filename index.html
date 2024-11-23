@@ -9,7 +9,9 @@
 </head>
 <body>
     <header>
-        <a href="#" class="logo">Thinker Honey</a>
+        <img src="./static/img/logo2.png" class="logo1">
+
+        
         <nav class="navigation">
             <a href="#main">الرئيسية</a>
             <a href="#store">المتجر</a>
@@ -19,9 +21,10 @@
     </header>
     <section class="main" id="main">
         <div>
-            <h2>مرحبا بكم في متجر<br><span>عسل المفكر</span></h2>
+            
+            <h2>مرحبا بكم في متجر<br><span>Thinker Honey</span></h2>
             <h3>بيع أجود أنواع العسل الحر</h3>
-            <a href="#" class="main-btn">تسوق اللآن</a>
+            <a href="#store" class="main-btn">تسوق اللآن</a>
             <div class="social-icon">
                 <a href="https://www.instagram.com/thinker_honey/"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.facebook.com/profile.php?id=61567279060085"><i class="fa-brands fa-facebook-f"></i></a>
@@ -52,12 +55,43 @@
             
             </div>
         </div>
-        <form action="{{ url_for('add_to_cart') }}" method="post" class="cart-form">
-            <input type="hidden" name="product_id" value="{{ product[0] }}">
-            <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-            <button type="submit" class="add-to-cart">إضافة إلى السلة</button>
-        </form>
 
+        
+        <form action="templates/add_to_cart.html" method="post" class="cart-form">
+            <input type="hidden" name="product_id" value="12345">
+            <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+            <button type="submit" class="add-to-cart" id="add-to-cart-btn">إضافة إلى السلة</button>
+        </form>
+        
+        <div id="notification" style="display: none; background-color: #4CAF50; color: white; padding: 10px; margin-top: 10px;">
+            تم إضافة المنتج إلى السلة بنجاح!
+        </div>
+        
+        <script>
+            document.getElementById('add-to-cart-btn').addEventListener('click', function(event) {
+                event.preventDefault(); // منع الإرسال الافتراضي للنموذج
+                const productId = document.querySelector('input[name="product_id"]').value;
+                const quantity = document.querySelector('input[name="quantity"]').value;
+        
+                // يمكنك الآن تنفيذ أي إجراء تريده هنا
+                console.log('Product ID:', productId);
+                console.log('Quantity:', quantity);
+        
+                // عرض الإشعار
+                const notification = document.getElementById('notification');
+                notification.style.display = 'block';
+        
+                // إخفاء الإشعار بعد 3 ثوانٍ
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                    // إرسال النموذج بعد إخفاء الإشعار
+                    document.querySelector('.cart-form').submit();
+                }, 3000);
+            });
+        </script>
+        
+
+    
     </div>
 
       <!-- Product 2 -->
@@ -80,12 +114,31 @@
             </div>
     
         </div>
-        <form action="{{ url_for('add_to_cart') }}" method="post" class="cart-form">
-            <input type="hidden" name="product_id" value="{{ product[0] }}">
+        <form action="templates/add_to_cart.html" method="post" class="cart-form">
+            <input type="hidden" name="product_id" value="12345">
             <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-            <button type="submit" class="add-to-cart">إضافة إلى السلة</button>
+            <button type="submit" class="add-to-cart" id="add-to-cart-btn">إضافة إلى السلة</button>
         </form>
-
+        <div id="notification" style="display: none;
+         background-color: #4CAF50; 
+         color: white;
+          padding: 10px;
+          margin-top: 10px;"> تم إضافة المنتج إلى السلة بنجاح! </div>
+         <script> 
+         document.getElementById('add-to-cart-btn').addEventListener('click', function(event) { event.preventDefault();
+             // منع الإرسال الافتراضي للنموذج 
+         const productId = document.querySelector('input[name="product_id"]').value; 
+         const quantity = document.querySelector('input[name="quantity"]').value;
+          // يمكنك الآن تنفيذ أي إجراء تريده هنا 
+         console.log('Product ID:', productId); console.log('Quantity:', quantity);
+          // عرض الإشعار 
+         const notification = document.getElementById('notification'); notification.style.display = 'block';
+          // إخفاء الإشعار بعد 3 ثوانٍ 
+         setTimeout(() => { notification.style.display = 'none'; }, 3000);
+          // إرسال النموذج بعد تنفيذ الإجراءات 
+         document.querySelector('.cart-form').submit(); 
+        }); 
+         </script>
     </div>
 
         <!-- Product 3 -->
@@ -133,11 +186,53 @@
             </div>
     
         </div>
-        <form action="{{ url_for('add_to_cart') }}" method="post" class="cart-form">
-            <input type="hidden" name="product_id" value="{{ product[0] }}">
-            <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-            <button type="submit" class="add-to-cart">إضافة إلى السلة</button>
-        </form>
+        <form action="templates/add_to_cart.html" method="post" class="cart-form">
+    <input type="hidden" name="product_id" value="12345">
+    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+    <button type="submit" class="add-to-cart" id="add-to-cart-btn">إضافة إلى السلة</button>
+</form>
+
+<!-- نافذة منبثقة للتأكيد -->
+<div id="confirmation-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close-btn" id="close-modal">&times;</span>
+        <p>تمت إضافة المنتج إلى السلة بنجاح!</p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('add-to-cart-btn').addEventListener('click', function(event) {
+        event.preventDefault(); // منع الإرسال الافتراضي للنموذج
+        const productId = document.querySelector('input[name="product_id"]').value;
+        const quantity = document.querySelector('input[name="quantity"]').value;
+
+        // يمكنك الآن تنفيذ أي إجراء تريده هنا
+        console.log('Product ID:', productId);
+        console.log('Quantity:', quantity);
+
+        // عرض النافذة المنبثقة
+        const modal = document.getElementById('confirmation-modal');
+        modal.style.display = 'block';
+
+        // إخفاء النافذة المنبثقة عند النقر على زر الإغلاق
+        document.getElementById('close-modal').addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // إخفاء النافذة المنبثقة عند النقر خارجها
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // إرسال النموذج بعد عرض النافذة المنبثقة
+        setTimeout(() => {
+            document.querySelector('.cart-form').submit();
+        }, 2000); // تأخير لمدة 2 ثانية قبل إرسال النموذج
+    });
+</script>
+
 
     </div>
 

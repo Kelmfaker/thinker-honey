@@ -37,7 +37,7 @@ header {
 
 .logo{
 text-decoration: none;
-color:bisque;
+color: rgb(237, 226, 207);
 text-transform: uppercase;
 font-weight: 700;
 font-size: 1.7em;
@@ -46,7 +46,7 @@ letter-spacing: 2px;
 }
 
 .navigation a{
-    color:bisque;
+    color:rgb(237, 226, 207);
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 500;
@@ -54,7 +54,7 @@ letter-spacing: 2px;
 }
 
 .navigation a:hover{
-    color:darkgoldenrod;
+    color: rgb(225, 150, 39);
 } 
 
 
@@ -69,21 +69,30 @@ letter-spacing: 2px;
     background-attachment: fixed;
     padding: 50px;
 }
-.social-icon a{
+
+.logo1 {
+     width: 70px; /* Adjust the width as needed */
+     height: 70px; /* Adjust the height as needed */
+     background-size: cover;  
+   
+    
+    transition: background-color 0.3s ease, transform 0.3s ease; /* تأثيرات ديناميكية */ 
+}
+.main .social-icon a {
     font-size: 1.7em;
     padding: 30px;
-    color:rgb(50, 30, 6);
+    color:rgb(72, 47, 30);
     transition: background-color 0.3s ease, transform 0.3s ease; /* تأثيرات ديناميكية */
 
 }
 
-.social-icon a:hover{
-    color:darkred; 
+.main .social-icon a:hover {
+  
     transform: scale(1.05);
 }
 
 .main h2 {
-color:darkred;
+color:  rgb(72, 47, 30);
 font-size: 1.8em;
 font-weight: 500;
 text-align: right;
@@ -92,8 +101,7 @@ text-align: right;
 
 .main h2 span {
     display: inline-block;
-    margin-top: 10px;
-    color: rgb(58, 33, 3);
+    color:  rgb(72, 47, 30);
     font-size: 2em;
     font-weight: 600;
     text-align: right;
@@ -102,7 +110,7 @@ text-align: right;
 }
 
 .main h3{
-    color:darkred;
+    color:  rgb(72, 47, 30);
     font-size: 1.4em;
     font-weight: 700;
     letter-spacing: 1px;
@@ -114,8 +122,8 @@ text-align: right;
 
 .main-btn {
     text-align: center;
-    color: bisque;
-    background-color: rgb(60, 32, 5);
+    color:rgb(237, 226, 207);
+    background-color: rgb(72, 47, 30);
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 600;
@@ -129,7 +137,8 @@ text-align: right;
 }
 
 .main-btn:hover {
-    background-color: rgb(80, 42, 10); /* تغيير لون الخلفية عند التمرير */
+    background-color: rgb(225, 150, 39); /* تغيير لون الخلفية عند التمرير */
+    color:rgb(72, 47, 30);
     transform: scale(1.05); /* تكبير الزر قليلاً عند التمرير */
 }
 
@@ -150,7 +159,7 @@ margin: 30px;
 
 .product{
     background-color: rgba(240, 231, 141, 0.141);
-    border: 2px solid rgb(80, 42, 10);
+    border: 2px solid rgb(72, 47, 30);
     max-height: 30em;
     min-height: 15em;
     width: 15em;
@@ -180,7 +189,7 @@ transform: scale(1.1);
 }
 .description{
     font-size: 0.9em;
-    color: rgb(50, 30, 6);
+    color: rgb(72, 47, 30);
     text-align: justify;
     max-height: 6em; /* تحديد الحد الأقصى للارتفاع */
     /* max-width: 400px;  تحديد الحد الأقصى للعرض */ 
@@ -188,10 +197,9 @@ transform: scale(1.1);
 
      font-family: "Cairo Play", sans-serif;
      font-optical-sizing: auto;
-     font-weight: <weight>;
+     font-weight: 600;
      font-style: normal;
-     font-variation-settings:
-       "slnt" 0;
+     font-variation-settings: "slnt" 0;
 }
 
 .prd-title {
@@ -205,7 +213,7 @@ transform: scale(1.1);
 .more {
 
     text-decoration: none;
-    color:darkred;
+    color:rgb(225, 150, 39);
     font-family: "Cairo Play", sans-serif;
     font-optical-sizing: auto;
     font-size: 0.7em;
@@ -217,7 +225,7 @@ transform: scale(1.1);
 }
    
 .more:hover{
-    color:rgb(50, 30, 6);
+    color:rgb(72, 47, 30);
 }
 
 
@@ -232,7 +240,7 @@ transform: scale(1.1);
     justify-content: space-between;
     align-items: center; /* محاذاة العناصر عموديًا */
    padding: 0.5em;
-     background-color:darkred;
+     background-color:rgb(72, 47, 30);
 }
 
 .quantity-input {
@@ -240,7 +248,7 @@ transform: scale(1.1);
     width: 50px; /* تحديد عرض ثابت */
     padding: 5px 10px; /* إضافة حشو داخلي */
     margin-right: 10px; /* مسافة يمين الحقل */
-    border: 2px solid darkgoldenrod; /* حدود الحقل */
+    border: 2px solid rgb(225, 150, 39); /* حدود الحقل */
     border-radius: 15px; /* زوايا مستديرة */
     text-align: center;
     transition: border-color 0.3s ease, box-shadow 0.3s ease; /* تأثيرات ديناميكية */
@@ -250,7 +258,7 @@ transform: scale(1.1);
 }
 
 .quantity-input:focus {
-    border-color: goldenrod; /* تغيير لون الحدود عند التركيز */
+    border-color: rgb(225, 150, 39); /* تغيير لون الحدود عند التركيز */
     box-shadow: 0 0 5px goldenrod; /* إضافة ظل عند التركيز */
 }
 
@@ -265,7 +273,7 @@ transform: scale(1.1);
     font-weight: 700;
     display: inline-block;
     letter-spacing: 1px;
-    border: 2px solid darkgoldenrod; /* حدود الحقل */
+    border: 2px solid rgb(225, 150, 39); /* حدود الحقل */
     border-radius: 15px;
     padding: 5px 10px;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -275,7 +283,7 @@ transform: scale(1.1);
 }
 
 .add-to-cart:hover {
-    background-color: goldenrod;
+    background-color: rgb(225, 150, 39);
     transform: scale(1.05);
 }
 
@@ -293,7 +301,7 @@ transform: scale(1.1);
     font-weight: 500;
 }
 .footer-title span{
-    color: darkgoldenrod;
+    color: rgb(225, 150, 39);
 }
 
 .footer .social-icon a{
@@ -301,6 +309,44 @@ transform: scale(1.1);
     padding: 0 12px 0 0;
     color: bisque;
 }
+
+
+.modal {
+    display: none; /* مخفي بشكل افتراضي */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: rgb(72, 47, 30);
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 
 /* Media Queries */
