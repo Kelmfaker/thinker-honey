@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تأكيد الطلب - Thinker Honey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Tahoma, sans-serif;
+      background-color: #f8f8f8;
+      padding: 20px;
+      direction: rtl;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #218838;
+    }
+
+    .order-summary {
+      background-color: #fff;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+    }
+
+    .order-summary h3 {
+      margin-bottom: 10px;
+    }
+
+    .order-summary p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📦 تأكيد الطلب</h1>
+
+  <div class="order-summary" id="order-summary">
+    <h3>محتوى السلة:</h3>
+    <!-- سيتم عرض الطلب هنا -->
+  </div>
+
+  <form onsubmit="submitOrder(event)">
+    <label for="name">الاسم الكامل:</label>
+    <input type="text" id="name" required>
+
+    <label for="phone">رقم الهاتف:</label>
+    <input type="tel" id="phone" required>
+
+    <label for="city">المدينة:</label>
+    <input type="text" id="city" required>
+
+    <label for="notes">ملاحظات إضافية (اختياري):</label>
+    <input type="text" id="notes">
+
+    <button type="submit" class="btn">تأكيد الطلب عبر WhatsApp</button>
+  </form>
+
+  <script>
+    function displayOrderSummary() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const container = document.getElementById('order-summary');
+
+      if (cart.length === 0) {
+        container.innerHTML = "<p>سلتك فارغة.</p>";
+        return;
+      }
+
+      let html = "";
+      let total = 0;
+
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        html += `<p>${item.name} - ${item.quantity} × ${item.price} = ${subtotal.toFixed(2)} Dh</p>`;
+      });
+
+      html += `<hr><strong>المجموع: ${total.toFixed(2)} Dh</strong>`;
+      container.innerHTML += html;
+    }
+
+    function submitOrder(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const city = document.getElementById("city").value;
+      const notes = document.getElementById("notes").value;
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      if (cart.length === 0) {
+        alert("سلتك فارغة.");
+        return;
+      }
+
+      let message = `*طلب جديد من Thinker Honey*%0A`;
+      message += `👤 الاسم: ${name}%0A`;
+      message += `📞 الهاتف: ${phone}%0A`;
+      message += `🏙️ المدينة: ${city}%0A`;
+      if (notes) {
+        message += `📝 ملاحظات: ${notes}%0A`;
+      }
+      message += `%0A🛍️ *المنتجات:*%0A`;
+
+      let total = 0;
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        message += `- ${item.name} × ${item.quantity} = ${subtotal.toFixed(2)} Dh%0A`;
+      });
+
+      message += `%0A💰 *الإجمالي: ${total.toFixed(2)} Dh*`;
+
+      const whatsappNumber = "212708318135"; // غيّريه برقمك مع مفتاح المغرب
+      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+    }
+
+    displayOrderSummary();
+  </script>
+
+</body>
+</html>

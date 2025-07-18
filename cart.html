@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>سلة المشتريات - Thinker Honey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/styles.css">
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+      direction: rtl;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    img {
+      width: 80px;
+      height: auto;
+    }
+
+    .total {
+      font-size: 1.2em;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #b02a37;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛒 سلة المشتريات</h1>
+
+  <table id="cart-table">
+    <thead>
+      <tr>
+        <th>الصورة</th>
+        <th>المنتج</th>
+        <th>السعر</th>
+        <th>الكمية</th>
+        <th>الإجمالي</th>
+        <th>حذف</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- سيتم ملء السلة تلقائيًا هنا -->
+    </tbody>
+  </table>
+
+  <div class="total" id="total-price">الإجمالي: 0 DH</div>
+  <a href="checkout.html">إتمام الطلب</a>
+
+  <button class="btn" onclick="clearCart()">تفريغ السلة</button>
+
+  <script>
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const tbody = document.querySelector('#cart-table tbody');
+      tbody.innerHTML = '';
+      let total = 0;
+  
+      cart.forEach((product, index) => {
+        const row = document.createElement('tr');
+        const subtotal = product.price * product.quantity;
+        total += subtotal;
+  
+        row.innerHTML = `
+          <td><img src="${product.image}" alt="${product.name}"></td>
+          <td>${product.name}</td>
+          <td>${product.price} Dh</td>
+          <td>
+            <button onclick="changeQuantity(${index}, -1)">➖</button>
+            ${product.quantity}
+            <button onclick="changeQuantity(${index}, 1)">➕</button>
+          </td>
+          <td>${subtotal.toFixed(2)} Dh</td>
+          <td><button onclick="removeItem(${index})">🗑️</button></td>
+        `;
+  
+        tbody.appendChild(row);
+      });
+  
+      document.getElementById('total-price').textContent = `الإجمالي: ${total.toFixed(2)} Dh`;
+    }
+  
+    function changeQuantity(index, delta) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart[index].quantity += delta;
+  
+      if (cart[index].quantity < 1) {
+        if (confirm("هل تريد حذف هذا المنتج من السلة؟")) {
+          cart.splice(index, 1);
+        } else {
+          cart[index].quantity = 1;
+        }
+      }
+  
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+    }
+  
+    function removeItem(index) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+    }
+  
+    function clearCart() {
+      if (confirm("هل أنت متأكد من أنك تريد تفريغ السلة؟")) {
+        localStorage.removeItem('cart');
+        loadCart();
+      }
+    }
+  
+    loadCart();
+  </script>
+  
+</body>
+</html>

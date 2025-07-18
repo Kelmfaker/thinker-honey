@@ -15,6 +15,7 @@
         <nav class="navigation">
             <a href="#main">الرئيسية</a>
             <a href="#store">المتجر</a>
+            <a href="cart.html">سلة المشتريات</a>
 
             <a href="#">تواصل معنا</a>
         </nav>
@@ -57,15 +58,21 @@
         </div>
 
         
-        <form action="templates/add_to_cart.html" method="post" class="cart-form">
-            <input type="hidden" name="product_id" value="12345">
-            <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-            <button type="submit" class="add-to-cart" id="add-to-cart-btn">إضافة إلى السلة</button>
-        </form>
-        
-        <div id="notification" style="display: none; background-color: #4CAF50; color: white; padding: 10px; margin-top: 10px;">
-            تم إضافة المنتج إلى السلة بنجاح!
-        </div>
+        <div class="quantity-control" style="margin:10px 0;">
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
+            الكمية <span class="quantity">1</span>
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
+          </div>
+          
+        <button class="add-to-cart"
+        data-id="1"
+        data-name="عسل الدغموس"
+        data-price="400"
+        data-image="static/img/prd-img/kalibtouse.jpg"
+        data-max="5" <!-- الحد الأقصى هنا 5 -->
+
+        إضافة إلى السلة
+    </button>
         
         <script>
             document.getElementById('add-to-cart-btn').addEventListener('click', function(event) {
@@ -114,11 +121,23 @@
             </div>
     
         </div>
-        <form action="templates/add_to_cart.html" method="post" class="cart-form">
-            <input type="hidden" name="product_id" value="12345">
-            <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-            <button type="submit" class="add-to-cart" id="add-to-cart-btn">إضافة إلى السلة</button>
-        </form>
+        <div class="quantity-control" style="margin:10px 0;">
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
+            الكمية <span class="quantity">1</span>
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
+          </div>
+
+        <button class="add-to-cart"
+        data-id="2"
+        data-name="عسل الزعتر"
+        data-price="300"
+        data-image="static/img/prd-img/kalibtouse.jpg"
+        data-max="5" <!-- الحد الأقصى هنا 5 -->
+
+        إضافة إلى السلة
+    </button>
+   
+
         <div id="notification" style="display: none;
          background-color: #4CAF50; 
          color: white;
@@ -158,12 +177,22 @@
                 </div>
         
             </div>
-            <form action="{{ url_for('add_to_cart') }}" method="post" class="cart-form">
-                <input type="hidden" name="product_id" value="{{ product[0] }}">
-                <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-                <button type="submit" class="add-to-cart">إضافة إلى السلة</button>
-            </form>
+            <div class="quantity-control" style="margin:10px 0;">
+                <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
+                الكمية <span class="quantity">1</span>
+                <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
+              </div>
+              
+            <button class="add-to-cart"
+            data-id="3"
+            data-name="عسل الكالبتوس"
+            data-price=200"
+            data-image="static/img/prd-img/kalibtouse.jpg"
+            data-max="5" <!-- الحد الأقصى هنا 5 -->
     
+            إضافة إلى السلة
+        </button>
+        
         </div>
 
             <!-- Product 4 -->
@@ -186,12 +215,22 @@
             </div>
     
         </div>
-        <form action="templates/add_to_cart.html" method="post" class="cart-form">
-    <input type="hidden" name="product_id" value="12345">
-    <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-    <button type="submit" class="add-to-cart" id="add-to-cart-btn">إضافة إلى السلة</button>
-</form>
+        <div class="quantity-control" style="margin:10px 0;">
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
+            الكمية <span class="quantity">1</span>
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
+          </div>
+          
+        <button class="add-to-cart"
+        data-id="4"
+        data-name="عسل السدر"
+        data-price="300"
+        data-image="static/img/prd-img/kalibtouse.jpg"
+        data-max="5" <!-- الحد الأقصى هنا 5 -->
 
+        إضافة إلى السلة
+    </button>
+    
 <!-- نافذة منبثقة للتأكيد -->
 <div id="confirmation-modal" class="modal" style="display: none;">
     <div class="modal-content">
@@ -255,11 +294,22 @@
                 </div>
         
             </div>
-            <form action="{{ url_for('add_to_cart') }}" method="post" class="cart-form">
-                <input type="hidden" name="product_id" value="{{ product[0] }}">
-                <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-                <button type="submit" class="add-to-cart">إضافة إلى السلة</button>
-            </form>
+            <div class="quantity-control" style="margin:10px 0;">
+                <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
+                الكمية <span class="quantity">1</span>
+                <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
+              </div>
+              
+            <button class="add-to-cart"
+            data-id="5"
+            data-name="عسل الزكوم"
+            data-price="300"
+            data-image="static/img/prd-img/kalibtouse.jpg"
+            data-max="5" <!-- الحد الأقصى هنا 5 -->
+    
+            إضافة إلى السلة
+        </button>
+        
     
         </div>
 
@@ -272,7 +322,7 @@
         <div class="prd-description">
             <strong class="prd-title">
             <span>عسل الخروب</span>
-          <span>غير متوفر</span>
+          <span>200</span>
             </strong>
             <div class="more-des">
             <p class="description"> عسل الخروب هو نوع فريد من العسل يتم استخراجه من زهور شجرة الخروب. له العديد من الفوائد الصحية بفضل تركيبته الغذائية الغنية. إليك بعض الفوائد الرئيسية لعسل الخروب:
@@ -283,11 +333,22 @@
             </div>
     
         </div>
-        <form action="{{ url_for('add_to_cart') }}" method="post" class="cart-form">
-            <input type="hidden" name="product_id" value="{{ product[0] }}">
-            <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-            <button type="submit" class="add-to-cart">إضافة إلى السلة</button>
-        </form>
+        <div class="quantity-control" style="margin:10px 0;">
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
+            الكمية <span class="quantity">1</span>
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
+          </div>
+          
+        <button class="add-to-cart"
+        data-id="6"
+        data-name="عسل الخروب"
+        data-price="200"
+        data-image="static/img/prd-img/kalibtouse.jpg"
+        data-max="0" <!-- الحد الأقصى هنا 5 -->
+
+        إضافة إلى السلة
+    </button>
+    
 
     </div>
 
@@ -311,11 +372,22 @@
                 </div>
         
             </div>
-            <form action="{{ url_for('add_to_cart') }}" method="post" class="cart-form">
-                <input type="hidden" name="product_id" value="{{ product[0] }}">
-                <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-                <button type="submit" class="add-to-cart">إضافة إلى السلة</button>
-            </form>
+            <div class="quantity-control" style="margin:10px 0;">
+                <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
+                الكمية <span class="quantity">1</span>
+                <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
+              </div>
+              
+            <button class="add-to-cart"
+            data-id="7"
+            data-name="عسل الأعشاب"
+            data-price="250"
+            data-image="static/img/prd-img/kalibtouse.jpg"
+            data-max="5" <!-- الحد الأقصى هنا 5 -->
+    
+            إضافة إلى السلة
+        </button>
+        
     
         </div>
 
@@ -339,11 +411,22 @@
             </div>
     
         </div>
-        <form action="{{ url_for('add_to_cart') }}" method="post" class="cart-form">
-            <input type="hidden" name="product_id" value="{{ product[0] }}">
-            <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-            <button type="submit" class="add-to-cart">إضافة إلى السلة</button>
-        </form>
+        <div class="quantity-control" style="margin:10px 0;">
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
+            الكمية <span class="quantity">1</span>
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
+          </div>
+          
+        <button class="add-to-cart"
+        data-id="8"
+        data-name="عسل الشوك"
+        data-price="200"
+        data-image="static/img/prd-img/kalibtouse.jpg"
+        data-max="5" <!-- الحد الأقصى هنا 5 -->
+
+        إضافة إلى السلة
+    </button>
+    
 
     </div>
 
@@ -355,7 +438,7 @@
             </div>
             <div class="prd-description">
                 <strong class="prd-title">
-                <span>عسل الجبل</span>
+                <span>عسل الجبلي</span>
                <span>220Dh</span>
                 </strong>
                 <div class="more-des">
@@ -368,11 +451,22 @@
                 </div>
         
             </div>
-            <form action="{{ url_for('add_to_cart') }}" method="post" class="cart-form">
-                <input type="hidden" name="product_id" value="{{ product[0] }}">
-                <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-                <button type="submit" class="add-to-cart">إضافة إلى السلة</button>
-            </form>
+            <div class="quantity-control" style="margin:10px 0;">
+                <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
+                الكمية <span class="quantity">1</span>
+                <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
+              </div>
+              
+            <button class="add-to-cart"
+            data-id="9"
+            data-name="عسل الجبلي"
+            data-price="220"
+            data-image="static/img/prd-img/kalibtouse.jpg"
+            data-max="5" <!-- الحد الأقصى هنا 5 -->
+    
+            إضافة إلى السلة
+        </button>
+        
     
         </div>
   
@@ -396,11 +490,22 @@
                 </div>
         
             </div>
-            <form action="{{ url_for('add_to_cart') }}" method="post" class="cart-form">
-                <input type="hidden" name="product_id" value="{{ product[0] }}">
-                <input type="number" name="quantity" value="1" min="1" class="quantity-input">
-                <button type="submit" class="add-to-cart">إضافة إلى السلة</button>
-            </form>
+            <div class="quantity-control" style="margin:10px 0;">
+                <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
+                الكمية <span class="quantity">1</span>
+                <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
+              </div>
+              
+            <button class="add-to-cart"
+            data-id="10"
+            data-name="عسل الليمون"
+            data-price="120"
+            data-image="static/img/prd-img/kalibtouse.jpg"
+            data-max="5" <!-- الحد الأقصى هنا 5 -->
+    
+            إضافة إلى السلة
+        </button>
+        
     
         </div>
 
@@ -414,6 +519,53 @@
         <a href="https://wa.me/c/212708318135"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
 </footer>
+<script>
+function changeQuantity(button, delta) {
+  const productDiv = button.closest('.product');
+  const quantitySpan = productDiv.querySelector('.quantity');
+  let qty = parseInt(quantitySpan.textContent);
+
+  const addToCartBtn = productDiv.querySelector('.add-to-cart');
+  const max = parseInt(addToCartBtn.dataset.max) || 20; // 20 كحد افتراضي
+
+  qty += delta;
+  if (qty < 1) qty = 1;
+  if (qty > max) qty = max;
+
+  quantitySpan.textContent = qty;
+}
+
+document.querySelectorAll('.add-to-cart').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const productDiv = btn.closest('.product');
+    const quantity = parseInt(productDiv.querySelector('.quantity').textContent);
+
+    const product = {
+      id: btn.dataset.id,
+      name: btn.dataset.name,
+      price: parseFloat(btn.dataset.price),
+      image: btn.dataset.image,
+      quantity: quantity
+    };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existing = cart.find(p => p.id === product.id);
+    if (existing) {
+      existing.quantity += product.quantity;
+    } else {
+      cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert(`تمت إضافة ${product.quantity} من "${product.name}" إلى السلة`);
+  });
+});
+
+
+</script>
+
 </body>
 </html>
   
