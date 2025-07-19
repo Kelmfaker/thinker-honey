@@ -94,25 +94,26 @@
   </form>
 
   <script>
-    function displayOrderSummary() {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const container = document.getElementById('order-summary');
+    const orderData = JSON.parse(localStorage.getItem("lastOrder")) || [];
 
-      if (cart.length === 0) {
-        container.innerHTML = "<p>سلتك فارغة.</p>";
+    function displayOrderSummary() {
+      const container = document.getElementById("order-summary");
+
+      if (orderData.length === 0) {
+        container.innerHTML += "<p>لا توجد طلبات.</p>";
         return;
       }
 
-      let html = "";
+      let html = "<ul>";
       let total = 0;
 
-      cart.forEach(item => {
+      orderData.forEach(item => {
         const subtotal = item.price * item.quantity;
         total += subtotal;
-        html += `<p>${item.name} - ${item.quantity} × ${item.price} = ${subtotal.toFixed(2)} Dh</p>`;
+        html += `<li>${item.name} × ${item.quantity} = ${subtotal.toFixed(2)} درهم</li>`;
       });
 
-      html += `<hr><strong>المجموع: ${total.toFixed(2)} Dh</strong>`;
+      html += `</ul><p><strong>الإجمالي: ${total.toFixed(2)} درهم</strong></p>`;
       container.innerHTML += html;
     }
 
@@ -123,10 +124,9 @@
       const phone = document.getElementById("phone").value;
       const city = document.getElementById("city").value;
       const notes = document.getElementById("notes").value;
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-      if (cart.length === 0) {
-        alert("سلتك فارغة.");
+      if (orderData.length === 0) {
+        alert("لا توجد منتجات لتأكيد الطلب.");
         return;
       }
 
@@ -140,7 +140,7 @@
       message += `%0A🛍️ *المنتجات:*%0A`;
 
       let total = 0;
-      cart.forEach(item => {
+      orderData.forEach(item => {
         const subtotal = item.price * item.quantity;
         total += subtotal;
         message += `- ${item.name} × ${item.quantity} = ${subtotal.toFixed(2)} Dh%0A`;
@@ -148,8 +148,11 @@
 
       message += `%0A💰 *الإجمالي: ${total.toFixed(2)} Dh*`;
 
-      const whatsappNumber = "212708318135"; // غيّريه برقمك مع مفتاح المغرب
+      const whatsappNumber = "212708318135"; // عدل الرقم حسب الحاجة
       window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+
+      // تفريغ الطلب بعد الإرسال
+      localStorage.removeItem("lastOrder");
     }
 
     displayOrderSummary();

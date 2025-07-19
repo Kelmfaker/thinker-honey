@@ -5,7 +5,7 @@
   <title>سلة المشتريات - Thinker Honey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="static/styles.css">
-  
+
   <style>
   body {
     font-family: 'Tahoma', sans-serif;
@@ -120,7 +120,7 @@
   </div>
   <div class="total" id="total-price">الإجمالي: 0 DH</div>
   <div class="center-button">
-  <button class="btn" onclick="window.location.href='checkout.html'">إتمام الطلب</button>
+<button class="btn" onclick="submitOrder()">إتمام الطلب</button>
 
   <button class="btn" onclick="clearCart()">تفريغ السلة</button>
   <button class="btn" onclick="window.location.href='index.html'">متابعة التسوق</button>
@@ -179,6 +179,9 @@
       localStorage.setItem('cart', JSON.stringify(cart));
       loadCart();
     }
+
+  
+
   
     function removeItem(index) {
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -195,6 +198,28 @@
     }
   
     loadCart();
+function submitOrder() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  if (cart.length === 0) {
+    alert('السلة فارغة');
+    return;
+  }
+
+  // حفظ السلة مؤقتاً في lastOrder
+  localStorage.setItem('lastOrder', JSON.stringify(cart));
+
+  // مسح السلة الأصلية
+  localStorage.removeItem('cart');
+
+  // تحديث العرض إذا كان هناك تحديث للسلة
+  if (typeof loadCart === 'function') loadCart();
+
+  // الانتقال إلى صفحة checkout
+  window.location.href = 'checkout.html';
+}
+
+
   </script>
   
 </body>
