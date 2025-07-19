@@ -69,6 +69,13 @@ letter-spacing: 2px;
     background-attachment: fixed;
     padding: 50px;
 }
+.logos {
+align-items: center;
+display: flex;
+flex-direction: row;
+padding: 20px;
+align-content: center;
+}
 
 .logo1 {
      width: 70px; /* Adjust the width as needed */
@@ -78,6 +85,16 @@ letter-spacing: 2px;
     
     transition: background-color 0.3s ease, transform 0.3s ease; /* تأثيرات ديناميكية */ 
 }
+
+
+.logo2 {
+    width: 200px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    background-size: cover;  
+  margin-right: 10%;
+   transition: background-color 0.3s ease, transform 0.3s ease; /* تأثيرات ديناميكية */ 
+}
+
 .main .social-icon a {
     font-size: 1.7em;
     padding: 30px;

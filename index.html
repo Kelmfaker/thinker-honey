@@ -15,31 +15,45 @@
         <nav class="navigation">
             <a href="#main">الرئيسية</a>
             <a href="#store">المتجر</a>
-            <a href="cart.html">سلة المشتريات</a>
 
-            <a href="#">تواصل معنا</a>
+        </nav>
+        <nav class="navigation">
+
+            <a href="cart.html">سلة المشتريات</a>
+            <a href="login.html" style="opacity: 1%; cursor:none;">تسجيل الدخول</a>
+
         </nav>
     </header>
     <section class="main" id="main">
+
         <div>
             
             <h2>مرحبا بكم في متجر<br><span>Thinker Honey</span></h2>
-            <h3>بيع أجود أنواع العسل الحر</h3>
+            <h2>لبيع أجود أنواع العسل الحر</h2><br><br>
+            <h3>التوصيل لجميع المدن بالمغرب <span>مجانا</span></h3>
+            <h3>لكل طلبية تجاوزت قيمتها 500 درهم</h3>
             <a href="#store" class="main-btn">تسوق اللآن</a>
             <div class="social-icon">
+                تواصل معنا عبر
                 <a href="https://www.instagram.com/thinker_honey/"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.facebook.com/profile.php?id=61567279060085"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://wa.me/c/212708318135"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </section>
+    <div class="logos">
+    <img src="./static/img/logo1.png" class="logo2">
+    <h2><span>Thinker Honey</span> <br>ليست مجرد علامة تجارية, بل هي تجسيد للثقة المتبادلة</h2>
+</div>
     <section class="content">
+      
+
 <div class="products" id="store">
-   
+
     <!-- Product 1 -->
     <div class="product">
         <div class="prd-img">
-            <img src="static/img/prd-img/kalibtouse.jpg">
+            <img src="static/img/h.jpg">
         </div>
         <div class="prd-description">
             <strong class="prd-title">
@@ -72,30 +86,7 @@
         data-max="5" <!-- الحد الأقصى هنا 5 -->
 
         إضافة إلى السلة
-    </button>
-        
-        <script>
-            document.getElementById('add-to-cart-btn').addEventListener('click', function(event) {
-                event.preventDefault(); // منع الإرسال الافتراضي للنموذج
-                const productId = document.querySelector('input[name="product_id"]').value;
-                const quantity = document.querySelector('input[name="quantity"]').value;
-        
-                // يمكنك الآن تنفيذ أي إجراء تريده هنا
-                console.log('Product ID:', productId);
-                console.log('Quantity:', quantity);
-        
-                // عرض الإشعار
-                const notification = document.getElementById('notification');
-                notification.style.display = 'block';
-        
-                // إخفاء الإشعار بعد 3 ثوانٍ
-                setTimeout(() => {
-                    notification.style.display = 'none';
-                    // إرسال النموذج بعد إخفاء الإشعار
-                    document.querySelector('.cart-form').submit();
-                }, 3000);
-            });
-        </script>
+    </button>      
         
 
     
@@ -122,9 +113,11 @@
     
         </div>
         <div class="quantity-control" style="margin:10px 0;">
-            <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
-            الكمية <span class="quantity">1</span>
-            <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)"  disabled
+            cursor: not-allowed;">➖</button>
+           الكمية <span class="quantity">0</span>
+           <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)"  disabled
+          cursor: not-allowed;">➕</button>
           </div>
 
         <button class="add-to-cart"
@@ -132,33 +125,15 @@
         data-name="عسل الزعتر"
         data-price="300"
         data-image="static/img/prd-img/kalibtouse.jpg"
-        data-max="5" <!-- الحد الأقصى هنا 5 -->
-
-        إضافة إلى السلة
-    </button>
+        data-max="5" 
+        
+        disabled
+        style="background-color: gray; cursor: not-allowed;"
+    >
+        غير متوفر حاليا   </button>
    
+      </div>
 
-        <div id="notification" style="display: none;
-         background-color: #4CAF50; 
-         color: white;
-          padding: 10px;
-          margin-top: 10px;"> تم إضافة المنتج إلى السلة بنجاح! </div>
-         <script> 
-         document.getElementById('add-to-cart-btn').addEventListener('click', function(event) { event.preventDefault();
-             // منع الإرسال الافتراضي للنموذج 
-         const productId = document.querySelector('input[name="product_id"]').value; 
-         const quantity = document.querySelector('input[name="quantity"]').value;
-          // يمكنك الآن تنفيذ أي إجراء تريده هنا 
-         console.log('Product ID:', productId); console.log('Quantity:', quantity);
-          // عرض الإشعار 
-         const notification = document.getElementById('notification'); notification.style.display = 'block';
-          // إخفاء الإشعار بعد 3 ثوانٍ 
-         setTimeout(() => { notification.style.display = 'none'; }, 3000);
-          // إرسال النموذج بعد تنفيذ الإجراءات 
-         document.querySelector('.cart-form').submit(); 
-        }); 
-         </script>
-    </div>
 
         <!-- Product 3 -->
         <div class="product">
@@ -188,7 +163,7 @@
             data-name="عسل الكالبتوس"
             data-price=200"
             data-image="static/img/prd-img/kalibtouse.jpg"
-            data-max="5" <!-- الحد الأقصى هنا 5 -->
+            data-max="6" <!-- الحد الأقصى هنا 5 -->
     
             إضافة إلى السلة
         </button>
@@ -216,9 +191,11 @@
     
         </div>
         <div class="quantity-control" style="margin:10px 0;">
-            <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
-            الكمية <span class="quantity">1</span>
-            <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)"  disabled
+            cursor: not-allowed;">➖</button>
+           الكمية <span class="quantity">0</span>
+           <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)"  disabled
+          cursor: not-allowed;">➕</button>
           </div>
           
         <button class="add-to-cart"
@@ -226,52 +203,12 @@
         data-name="عسل السدر"
         data-price="300"
         data-image="static/img/prd-img/kalibtouse.jpg"
-        data-max="5" <!-- الحد الأقصى هنا 5 -->
+        data-max="5" 
+        disabled
+        style="background-color: gray; cursor: not-allowed;">
 
-        إضافة إلى السلة
-    </button>
-    
-<!-- نافذة منبثقة للتأكيد -->
-<div id="confirmation-modal" class="modal" style="display: none;">
-    <div class="modal-content">
-        <span class="close-btn" id="close-modal">&times;</span>
-        <p>تمت إضافة المنتج إلى السلة بنجاح!</p>
-    </div>
-</div>
-
-<script>
-    document.getElementById('add-to-cart-btn').addEventListener('click', function(event) {
-        event.preventDefault(); // منع الإرسال الافتراضي للنموذج
-        const productId = document.querySelector('input[name="product_id"]').value;
-        const quantity = document.querySelector('input[name="quantity"]').value;
-
-        // يمكنك الآن تنفيذ أي إجراء تريده هنا
-        console.log('Product ID:', productId);
-        console.log('Quantity:', quantity);
-
-        // عرض النافذة المنبثقة
-        const modal = document.getElementById('confirmation-modal');
-        modal.style.display = 'block';
-
-        // إخفاء النافذة المنبثقة عند النقر على زر الإغلاق
-        document.getElementById('close-modal').addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-
-        // إخفاء النافذة المنبثقة عند النقر خارجها
-        window.addEventListener('click', function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-        // إرسال النموذج بعد عرض النافذة المنبثقة
-        setTimeout(() => {
-            document.querySelector('.cart-form').submit();
-        }, 2000); // تأخير لمدة 2 ثانية قبل إرسال النموذج
-    });
-</script>
-
+        غير متوفر حاليا  
+     </button>
 
     </div>
 
@@ -322,7 +259,7 @@
         <div class="prd-description">
             <strong class="prd-title">
             <span>عسل الخروب</span>
-          <span>200</span>
+          <span>200Dh</span>
             </strong>
             <div class="more-des">
             <p class="description"> عسل الخروب هو نوع فريد من العسل يتم استخراجه من زهور شجرة الخروب. له العديد من الفوائد الصحية بفضل تركيبته الغذائية الغنية. إليك بعض الفوائد الرئيسية لعسل الخروب:
@@ -334,9 +271,11 @@
     
         </div>
         <div class="quantity-control" style="margin:10px 0;">
-            <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
-            الكمية <span class="quantity">1</span>
-            <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)"  disabled
+             cursor: not-allowed;">➖</button>
+            الكمية <span class="quantity">0</span>
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)"  disabled
+           cursor: not-allowed;">➕</button>
           </div>
           
         <button class="add-to-cart"
@@ -344,10 +283,12 @@
         data-name="عسل الخروب"
         data-price="200"
         data-image="static/img/prd-img/kalibtouse.jpg"
-        data-max="0" <!-- الحد الأقصى هنا 5 -->
+        data-max= "5"
 
-        إضافة إلى السلة
-    </button>
+        disabled
+        style="background-color: gray; cursor: not-allowed;"
+    >
+        غير متوفر حاليا   </button>
     
 
     </div>
@@ -383,7 +324,7 @@
             data-name="عسل الأعشاب"
             data-price="250"
             data-image="static/img/prd-img/kalibtouse.jpg"
-            data-max="5" <!-- الحد الأقصى هنا 5 -->
+            data-max="4" <!-- الحد الأقصى هنا 5 -->
     
             إضافة إلى السلة
         </button>
@@ -412,9 +353,11 @@
     
         </div>
         <div class="quantity-control" style="margin:10px 0;">
-            <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
-            الكمية <span class="quantity">1</span>
-            <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)"  disabled
+             cursor: not-allowed;">➖</button>
+            الكمية <span class="quantity">0</span>
+            <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)"  disabled
+           cursor: not-allowed;">➕</button>
           </div>
           
         <button class="add-to-cart"
@@ -422,10 +365,11 @@
         data-name="عسل الشوك"
         data-price="200"
         data-image="static/img/prd-img/kalibtouse.jpg"
-        data-max="5" <!-- الحد الأقصى هنا 5 -->
+        data-max="5"  disabled
+        style="background-color: gray; cursor: not-allowed;">
 
-        إضافة إلى السلة
-    </button>
+        غير متوفر حاليا  
+     </button>
     
 
     </div>
@@ -434,7 +378,7 @@
         <!-- Product 9 -->
         <div class="product">
             <div class="prd-img">
-                <img src="static/img/prd-img/kalibtouse.jpg">
+                <img src="static/img/prd-img/d.jpg">
             </div>
             <div class="prd-description">
                 <strong class="prd-title">
@@ -501,12 +445,13 @@
             data-name="عسل الليمون"
             data-price="120"
             data-image="static/img/prd-img/kalibtouse.jpg"
-            data-max="5" <!-- الحد الأقصى هنا 5 -->
+            data-max="19" <!-- الحد الأقصى هنا 5 -->
     
             إضافة إلى السلة
         </button>
-        
-    
+
+
+
         </div>
 
 </div>
@@ -519,7 +464,14 @@
         <a href="https://wa.me/c/212708318135"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
 </footer>
+
+
+
 <script>
+
+
+
+
 function changeQuantity(button, delta) {
   const productDiv = button.closest('.product');
   const quantitySpan = productDiv.querySelector('.quantity');
@@ -535,33 +487,43 @@ function changeQuantity(button, delta) {
   quantitySpan.textContent = qty;
 }
 
-document.querySelectorAll('.add-to-cart').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const productDiv = btn.closest('.product');
-    const quantity = parseInt(productDiv.querySelector('.quantity').textContent);
-
-    const product = {
-      id: btn.dataset.id,
-      name: btn.dataset.name,
-      price: parseFloat(btn.dataset.price),
-      image: btn.dataset.image,
-      quantity: quantity
-    };
-
+document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', () => {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    const existing = cart.find(p => p.id === product.id);
-    if (existing) {
-      existing.quantity += product.quantity;
+    const id = button.dataset.id;
+    const name = button.dataset.name;
+    const price = parseFloat(button.dataset.price);
+    const image = button.dataset.image;
+    const max = parseInt(button.dataset.max);
+
+    const productDiv = button.closest('.product');
+    const quantity = parseInt(productDiv.querySelector('.quantity').textContent);
+
+    const existingProduct = cart.find(p => p.id === id);
+
+    if (existingProduct) {
+      if (existingProduct.quantity + quantity <= existingProduct.max) {
+        existingProduct.quantity += quantity;
+      } else {
+        alert('لقد وصلت إلى الحد الأقصى لهذا المنتج');
+        return;  // لا تضيف الكمية وتتوقف
+      }
     } else {
-      cart.push(product);
+      if (quantity <= max) {
+        cart.push({ id, name, price, image, quantity, max });
+      } else {
+        alert('الكمية المطلوبة تتجاوز الحد الأقصى المتاح');
+        return;
+      }
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    alert(`تمت إضافة ${product.quantity} من "${product.name}" إلى السلة`);
+    alert(`تمت إضافة ${quantity} من "${name}" إلى السلة`);
   });
 });
+
 
 
 </script>

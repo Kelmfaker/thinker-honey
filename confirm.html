@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تأكيد الطلبيات</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; direction: rtl; }
+    h2 { color: #333; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    button { padding: 6px 12px; background: green; color: white; border: none; cursor: pointer; }
+    .hidden { display: none; color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h2>لوحة إدارة الطلبيات</h2>
+  <p id="warning" class="hidden">ليس لديك صلاحية الوصول إلى هذه الصفحة.</p>
+
+  <div id="adminContent" style="display: none;">
+    <table>
+      <thead>
+        <tr>
+          <th>اسم المنتج</th>
+          <th>الكمية المطلوبة</th>
+          <th>الإجمالي</th>
+          <th>تأكيد الطلب</th>
+        </tr>
+      </thead>
+      <tbody id="ordersTable">
+        <!-- الطلبات ستظهر هنا -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const role = localStorage.getItem("userRole");
+    const adminContent = document.getElementById("adminContent");
+    const warning = document.getElementById("warning");
+
+    if (role === "admin") {
+      adminContent.style.display = "block";
+      loadOrders();
+    } else {
+      warning.classList.remove("hidden");
+    }
+
+    function loadOrders() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const tbody = document.getElementById("ordersTable");
+      tbody.innerHTML = "";
+
+      cart.forEach((item, index) => {
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
+          <td>${item.name}</td>
+          <td>${item.quantity}</td>
+          <td>${(item.quantity * item.price).toFixed(2)} درهم</td>
+          <td><button onclick="confirmOrder(${index})">تأكيد</button></td>
+        `;
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    function confirmOrder(index) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      // إزالة العنصر المؤكد من السلة
+      const confirmed = cart.splice(index, 1);
+
+      // حفظ التغييرات
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      // إعادة تحميل الطلبيات
+      loadOrders();
+
+      alert("تم تأكيد الطلب");
+    }
+  </script>
+
+</body>
+</html>
