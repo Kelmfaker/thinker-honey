@@ -406,7 +406,14 @@ transform: scale(1.1);
     cursor: pointer;
 }
 
-
+/* ضبط للشاشات الصغيرة والهواتف */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px 20px;
+    text-align: center;
+  }
+}
 
 /* Media Queries */
  @media (max-width: 1200px) { 
