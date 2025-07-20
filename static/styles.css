@@ -68,6 +68,8 @@ letter-spacing: 2px;
     background-position: center;
     background-attachment: fixed;
     padding: 50px;
+      position: relative;
+  padding-bottom: 60px; /* لإعطاء مساحة تحتية للشريط */
 }
 .logos {
 align-items: center;
@@ -78,12 +80,52 @@ align-content: center;
 }
 
 .logo1 {
-     width: 70px; /* Adjust the width as needed */
-     height: 70px; /* Adjust the height as needed */
+     width: 100px; /* Adjust the width as needed */
+     height: 100px; /* Adjust the height as needed */
      background-size: cover;  
-   
+   padding-top: 0%;
     
     transition: background-color 0.3s ease, transform 0.3s ease; /* تأثيرات ديناميكية */ 
+}
+
+
+.promo-banner {
+    background-image: url(./img/header\ &\ footer.jpg);
+  color: #fffdfd;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  border-top: 2px solid #e6c200;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+.promo-banner span {
+  color: #d32f2f; /* أحمر */
+  font-weight: bold;
+}
+
+.promo-banner strong {
+ color: rgb(225, 150, 39);
+}
+
+.promo-banner p {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 15s linear infinite;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 

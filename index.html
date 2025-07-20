@@ -6,32 +6,113 @@
     <title>Thinker Honey</title>
     <link rel="stylesheet" href="static/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+   <style>
+    body { margin: 0; font-family: Arial, sans-serif; direction: rtl; }
+
+    .navbar {
+      background-color:  rgb(225, 150, 39);
+;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ccc;
+      margin: 20px;
+    }
+
+    .navbar .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .navbar .links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar .links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+    }
+
+    .navbar .cart-icon a {
+      text-decoration: none;
+      color: #333;
+      font-size: 22px;
+      position: relative;
+    }
+
+    .navbar .cart-icon a:hover {
+      color: green;
+    }
+
+    /* يمكن لاحقاً إضافة عداد للسلة */
+    /* .cart-icon a::after {
+      content: "3";
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      background: red;
+      color: white;
+      border-radius: 50%;
+      font-size: 12px;
+      padding: 2px 5px;
+    } */
+
+    .cart-icon {
+  position: relative;
+}
+
+#cart-count {
+  position: absolute;
+  top: -5px;
+  left: -10px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+  </style>
 </head>
 <body>
     <header>
-        <img src="./static/img/logo2.png" class="logo1">
 
-        
-        <nav class="navigation">
-            <a href="#main">الرئيسية</a>
-            <a href="#store">المتجر</a>
+    <img src="./static/img/logo1.png" class="logo1">
 
-        </nav>
-        <nav class="navigation">
+  <div class="navbar">
+    <div class="links">
+      <a href="#main">الرئيسية</a>
+      <a href="#store">منتجاتنا</a>
+       <div class="cart-icon">
+      <a href="cart.html" title="سلة المشتريات">
+        <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
 
-            <a href="cart.html">سلة المشتريات</a>
-            <a href="login.html" style="opacity: 1%; cursor:none;">تسجيل الدخول</a>
+      </a>
+    </div>
+    </div>
+   
+  </div>
 
-        </nav>
     </header>
+
+    <div id="message" style="display:none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+ background: #28a745; color: white; padding: 10px 20px; border-radius: 5px; z-index: 1000;">
+</div>
+
+
     <section class="main" id="main">
 
         <div>
             
             <h2>مرحبا بكم في متجر<br><span>Thinker Honey</span></h2>
             <h2>لبيع أجود أنواع العسل الحر</h2><br><br>
-            <h3>التوصيل لجميع المدن بالمغرب <span>مجانا</span></h3>
-            <h3>لكل طلبية تجاوزت قيمتها 500 درهم</h3>
+          
             <a href="#store" class="main-btn">تسوق اللآن</a>
             <div class="social-icon">
                 تواصل معنا عبر
@@ -40,6 +121,12 @@
                 <a href="https://wa.me/c/212708318135"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
+        <div class="promo-banner">
+  <p>
+    التوصيل لجميع المدن بالمغرب <span>مجانا</span> لكل طلبية تجاوزت قيمتها <strong>500 درهم</strong>
+  </p>
+</div>
+
     </section>
     <div class="logos">
     <img src="./static/img/logo1.png" class="logo2">
@@ -323,7 +410,7 @@
             data-id="7"
             data-name="عسل الأعشاب"
             data-price="250"
-            data-image="static/img/prd-img/g.jpg
+            data-image="static/img/prd-img/g.jpg"
             data-max="4" <!-- الحد الأقصى هنا 5 -->
     
             إضافة إلى السلة
@@ -487,6 +574,17 @@ function changeQuantity(button, delta) {
   quantitySpan.textContent = qty;
 }
 
+function showMessage(text) {
+  const messageDiv = document.getElementById('message');
+  messageDiv.textContent = text;
+  messageDiv.style.display = 'block';
+
+  setTimeout(() => {
+    messageDiv.style.display = 'none';
+  }, 3000);
+}
+
+
 document.querySelectorAll('.add-to-cart').forEach(button => {
   button.addEventListener('click', () => {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -520,11 +618,24 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
 
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    alert(`تمت إضافة ${quantity} من "${name}" إلى السلة`);
+showMessage(`تمت إضافة ${quantity} من "${name}" إلى السلة`);
+  updateCartCount();
+
+
   });
 });
 
+ function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let totalItems = 0;
+    cart.forEach(item => {
+      totalItems += item.quantity;
+    });
+    document.getElementById('cart-count').textContent = totalItems;
+  }
 
+  // شغلها مباشرة عند تحميل الصفحة
+  updateCartCount();
 
 </script>
 

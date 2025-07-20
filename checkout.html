@@ -75,7 +75,11 @@
   <div class="order-summary" id="order-summary">
     <h3>محتوى السلة:</h3>
     <!-- سيتم عرض الطلب هنا -->
+     
   </div>
+<p id="shippingCost"></p>
+<p id="finalTotal"></p>
+
 
   <form onsubmit="submitOrder(event)">
     <label for="name">الاسم الكامل:</label>
@@ -85,7 +89,29 @@
     <input type="tel" id="phone" required>
 
     <label for="city">المدينة:</label>
-    <input type="text" id="city" required>
+<select id="city" required>
+  <option value="">اختر المدينة</option>
+  <option value="الدار البيضاء">الدار البيضاء</option>
+  <option value="الرباط">الرباط</option>
+  <option value="فاس">فاس</option>
+  <option value="مراكش">مراكش</option>
+  <option value="طنجة">طنجة</option>
+  <option value="أكادير">أكادير</option>
+  <option value="مكناس">مكناس</option>
+  <option value="وجدة">وجدة</option>
+  <option value="تطوان">تطوان</option>
+  <option value="الجديدة">الجديدة</option>
+  <option value="آسفي">آسفي</option>
+  <option value="الناظور">الناظور</option>
+  <option value="القنيطرة">القنيطرة</option>
+  <option value="خريبكة">خريبكة</option>
+  <option value="بني ملال">بني ملال</option>
+  <option value="تازة">تازة</option>
+  <option value="تارودانت">تارودانت</option>
+  <option value="سلا">سلا</option>
+  <option value="الصويرة">الصويرة</option>
+  <option value="العيون">العيون</option>
+</select>
 
     <label for="notes">ملاحظات إضافية (اختياري):</label>
     <input type="text" id="notes">
@@ -94,69 +120,94 @@
   </form>
 
   <script>
-    const orderData = JSON.parse(localStorage.getItem("lastOrder")) || [];
+  const orderData = JSON.parse(localStorage.getItem("lastOrder")) || [];
 
-    function displayOrderSummary() {
-      const container = document.getElementById("order-summary");
+  function calculateShipping(city, total) {
+    if (total >= 500) {
+      return 0;
+    } else if (city.trim().toLowerCase() === "فاس") {
+      return 15;
+    } else {
+      return 40;
+    }
+  }
 
-      if (orderData.length === 0) {
-        container.innerHTML += "<p>لا توجد طلبات.</p>";
-        return;
-      }
+ function displayOrderSummary() {
+  const container = document.getElementById("order-summary");
+  container.innerHTML = ""; // إعادة تعيين المحتوى
 
-      let html = "<ul>";
-      let total = 0;
+  if (orderData.length === 0) {
+    container.innerHTML = "<p>لا توجد طلبات.</p>";
+    return;
+  }
 
-      orderData.forEach(item => {
-        const subtotal = item.price * item.quantity;
-        total += subtotal;
-        html += `<li>${item.name} × ${item.quantity} = ${subtotal.toFixed(2)} درهم</li>`;
-      });
+  let html = "<ul>";
+  let total = 0;
 
-      html += `</ul><p><strong>الإجمالي: ${total.toFixed(2)} درهم</strong></p>`;
-      container.innerHTML += html;
+  orderData.forEach(item => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+    html += `<li>${item.name} × ${item.quantity} = ${subtotal.toFixed(2)} درهم</li>`;
+  });
+
+  html += `</ul><p><strong>الإجمالي بدون شحن: ${total.toFixed(2)} درهم</strong></p>`;
+  container.innerHTML = html;
+
+  // استخرج المدينة المختارة
+  const city = document.getElementById("city").value || "";
+  const shipping = calculateShipping(city, total);
+
+  // عرض تكلفة الشحن والإجمالي مع الشحن
+  document.getElementById("shippingCost").innerText = `تكلفة الشحن: ${shipping.toFixed(2)} درهم`;
+  document.getElementById("finalTotal").innerHTML = `<strong>الإجمالي مع الشحن: ${(total + shipping).toFixed(2)} درهم</strong>`;
+}
+
+  function submitOrder(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const city = document.getElementById("city").value;
+    const notes = document.getElementById("notes").value;
+
+    if (orderData.length === 0) {
+      alert("لا توجد منتجات لتأكيد الطلب.");
+      return;
     }
 
-    function submitOrder(event) {
-      event.preventDefault();
-
-      const name = document.getElementById("name").value;
-      const phone = document.getElementById("phone").value;
-      const city = document.getElementById("city").value;
-      const notes = document.getElementById("notes").value;
-
-      if (orderData.length === 0) {
-        alert("لا توجد منتجات لتأكيد الطلب.");
-        return;
-      }
-
-      let message = `*طلب جديد من Thinker Honey*%0A`;
-      message += `👤 الاسم: ${name}%0A`;
-      message += `📞 الهاتف: ${phone}%0A`;
-      message += `🏙️ المدينة: ${city}%0A`;
-      if (notes) {
-        message += `📝 ملاحظات: ${notes}%0A`;
-      }
-      message += `%0A🛍️ *المنتجات:*%0A`;
-
-      let total = 0;
-      orderData.forEach(item => {
-        const subtotal = item.price * item.quantity;
-        total += subtotal;
-        message += `- ${item.name} × ${item.quantity} = ${subtotal.toFixed(2)} Dh%0A`;
-      });
-
-      message += `%0A💰 *الإجمالي: ${total.toFixed(2)} Dh*`;
-
-      const whatsappNumber = "212708318135"; // عدل الرقم حسب الحاجة
-      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
-
-      // تفريغ الطلب بعد الإرسال
-      localStorage.removeItem("lastOrder");
+    let message = `*طلب جديد من Thinker Honey*%0A`;
+    message += `👤 الاسم: ${name}%0A`;
+    message += `📞 الهاتف: ${phone}%0A`;
+    message += `🏙️ المدينة: ${city}%0A`;
+    if (notes) {
+      message += `📝 ملاحظات: ${notes}%0A`;
     }
+    message += `%0A🛍️ *المنتجات:*%0A`;
 
-    displayOrderSummary();
-  </script>
+    let total = 0;
+    orderData.forEach(item => {
+      const subtotal = item.price * item.quantity;
+      total += subtotal;
+      message += `- ${item.name} × ${item.quantity} = ${subtotal.toFixed(2)} Dh%0A`;
+    });
+
+    const shipping = calculateShipping(city, total);
+    const grandTotal = total + shipping;
+
+    message += `%0A🚚 *الشحن: ${shipping.toFixed(2)} Dh*`;
+    message += `%0A💰 *المجموع الكلي: ${grandTotal.toFixed(2)} Dh*`;
+
+    const whatsappNumber = "212708318135";
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+
+    localStorage.removeItem("lastOrder");
+
+      // الرجوع للصفحة الرئيسية
+  window.location.href = "index.html";
+  }
+
+  displayOrderSummary();
+</script>
 
 </body>
 </html>
