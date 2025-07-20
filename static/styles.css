@@ -12,15 +12,18 @@
 *{
     font-family: "Kufam", sans-serif; /* تأكد من تحديد الخط الافتراضي */    margin: 0;
     padding: 0;
+        margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 
 }
+
+
+
 body {
     direction: rtl;
     text-align: right;
     background-image: url(./img/5361107.jpg);
-      padding-top: 120px; /* نفس ارتفاع الهيدر */
 
 }
 header {
@@ -32,6 +35,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 200px;
+
 }
 
 
@@ -116,6 +120,14 @@ align-content: center;
   right: 0;
 }
 
+/* هذا الكلاس يعمم على كل العناصر اللي تحتاج نفس حدود الصفحة */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
 .promo-banner span {
   color: #d32f2f; /* أحمر */
