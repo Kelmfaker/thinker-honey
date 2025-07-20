@@ -137,6 +137,18 @@ align-content: center;
    transition: background-color 0.3s ease, transform 0.3s ease; /* تأثيرات ديناميكية */ 
 }
 
+main .promo-banner {
+  background-color: #fdd835;
+  color: #000;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  border-top: 2px solid #e6c200;
+  margin-top: 30px;
+}
+
+
 .main .social-icon a {
     font-size: 1.7em;
     padding: 30px;
