@@ -20,19 +20,31 @@ body {
     direction: rtl;
     text-align: right;
     background-image: url(./img/5361107.jpg);
+      padding-top: 120px; /* نفس ارتفاع الهيدر */
+
 }
 header {
-   
-    background-image: url(./img/header\ &\ footer.jpg);
-    width: 100%;
-    padding: 0;
-    z-index: 999;
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
- align-items: center;
- 
+  background-image: url(./img/header\ \&\ footer.jpg);
+  background-size: cover; /* يجعل الصورة تغطي الهيدر */
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  width: 100%;
+  height: 120px; /* أو حسب محتوى الهيدر */
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 999;
 }
+
 
 .logo{
 text-decoration: none;
