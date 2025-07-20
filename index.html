@@ -7,75 +7,90 @@
     <link rel="stylesheet" href="static/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-   <style>
-    body { margin: 0; font-family: Arial, sans-serif; direction: rtl; }
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    direction: rtl;
+  }
 
+  .navbar {
+    background-color: rgb(225, 150, 39);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    margin: 20px;
+    flex-wrap: wrap;
+  }
+
+  .navbar .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .navbar .links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .navbar .links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+  }
+
+  .navbar .cart-icon a {
+    text-decoration: none;
+    color: #333;
+    font-size: 22px;
+    position: relative;
+  }
+
+  .navbar .cart-icon a:hover {
+    color: green;
+  }
+
+  .cart-icon {
+    position: relative;
+  }
+
+  #cart-count {
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+  }
+
+  /* استجابة للشاشات الصغيرة */
+  @media (max-width: 768px) {
     .navbar {
-      background-color:  rgb(225, 150, 39);
-;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      border-bottom: 1px solid #ccc;
-      margin: 20px;
-    }
-
-    .navbar .logo {
-      font-size: 20px;
-      font-weight: bold;
-      color: #333;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+      margin: 10px;
     }
 
     .navbar .links {
-      display: flex;
-      gap: 15px;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      margin-top: 10px;
     }
 
-    .navbar .links a {
-      text-decoration: none;
-      color: #333;
-      font-size: 16px;
+    .navbar .cart-icon {
+      align-self: flex-end;
     }
+  }
+</style>
 
-    .navbar .cart-icon a {
-      text-decoration: none;
-      color: #333;
-      font-size: 22px;
-      position: relative;
-    }
-
-    .navbar .cart-icon a:hover {
-      color: green;
-    }
-
-    /* يمكن لاحقاً إضافة عداد للسلة */
-    /* .cart-icon a::after {
-      content: "3";
-      position: absolute;
-      top: -8px;
-      left: -8px;
-      background: red;
-      color: white;
-      border-radius: 50%;
-      font-size: 12px;
-      padding: 2px 5px;
-    } */
-
-    .cart-icon {
-  position: relative;
-}
-
-#cart-count {
-  position: absolute;
-  top: -5px;
-  left: -10px;
-  background-color: red;
-  color: white;
-  font-size: 12px;
-  padding: 2px 6px;
-  border-radius: 50%;
-}
 
   </style>
 </head>
