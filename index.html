@@ -13,20 +13,7 @@
     font-family: Arial, sans-serif;
     direction: rtl;
   }
-.navbar {
-  background-color: rgb(225, 150, 39);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ccc;
-  width: 100%;
-  flex-wrap: wrap;
-  box-sizing: border-box; /* مهم لضمان عرض كامل */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+
 
   .navbar .logo {
     font-size: 20px;
@@ -99,25 +86,60 @@
     align-self: flex-end;
   }
 }
-  /* استجابة للشاشات الصغيرة */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 10px;
-    }
 
-    .navbar .links {
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
-      margin-top: 10px;
-    }
 
-    .navbar .cart-icon {
-      align-self: flex-end;
-    }
+
+
+  .navbar {
+  background-color: rgb(225, 150, 39);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* إخفاء قائمة الروابط والهامبرغر مبدئياً */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
   }
+
+  .links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    background-color: rgb(225, 150, 39);
+  }
+
+  .links a {
+    padding: 10px;
+    border-top: 1px solid #eee;
+    text-align: right;
+  }
+
+  .links.show {
+    display: flex;
+  }
+
+  .cart-icon {
+    align-self: flex-end;
+    margin-top: 10px;
+  }
+}
 </style>
 
 
@@ -126,9 +148,12 @@
 <body>
     <header>
 
-    <img src="./static/img/logo1.png" class="logo1">
+<div class="navbar">
+  <div class="logo">Thinker Honey</div>
+  <img src="./static/img/logo1.png" class="logo1">
 
-  <div class="navbar">
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
     <div class="links">
       <a href="#main">الرئيسية</a>
       <a href="#store">منتجاتنا</a>
@@ -140,10 +165,12 @@
       </a>
     </div>
     </div>
-   
-  </div>
 
-    </header>
+
+  </header>
+  
+
+  
 
     <div id="message" style="display:none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
  background: #28a745; color: white; padding: 10px 20px; border-radius: 5px; z-index: 1000;">
@@ -680,6 +707,12 @@ showMessage(`تمت إضافة ${quantity} من "${name}" إلى السلة`);
 
   // شغلها مباشرة عند تحميل الصفحة
   updateCartCount();
+
+
+  function toggleMenu() {
+    const links = document.getElementById("nav-links");
+    links.classList.toggle("show");
+  }
 
 </script>
 
