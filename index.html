@@ -8,6 +8,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
+
+
+  .navbar {
+  background-color: rgb(225, 150, 39);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* إخفاء قائمة الروابط والهامبرغر مبدئياً */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
   body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -89,29 +113,6 @@
 
 
 
-
-  .navbar {
-  background-color: rgb(225, 150, 39);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ccc;
-  width: 100%;
-  box-sizing: border-box;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* إخفاء قائمة الروابط والهامبرغر مبدئياً */
-.hamburger {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -143,12 +144,10 @@
 </style>
 
 
-  </style>
 </head>
 <body>
     <header>
-
-<div class="navbar">
+      <div class="navigation">
   <div class="logo">Thinker Honey</div>
   <img src="./static/img/logo1.png" class="logo1">
 
@@ -164,19 +163,21 @@
   <div class="cart-icon">
     <a href="#">🛒<span id="cart-count">3</span></a>
   </div>
-</div>
-
-
-  
-  </header>
-  
-
-  
-
-    <div id="message" style="display:none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+ <div id="message" style="display:none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
  background: #28a745; color: white; padding: 10px 20px; border-radius: 5px; z-index: 1000;">
 </div>
 
+</div>
+
+  </header>
+
+
+
+  
+
+  
+
+  
 
     <section class="main" id="main">
 
