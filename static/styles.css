@@ -73,7 +73,7 @@ letter-spacing: 2px;
 }
 
 .navigation a:hover{
-    color: rgb(225, 150, 39);
+    color: rgb(127, 43, 4);
 } 
 
 
@@ -97,7 +97,7 @@ padding: 20px;
 align-content: center;
 }
 
-.logos .h2{
+.logos .p{
   font-size: 10px;
   text-align: justify;
 }
@@ -323,7 +323,8 @@ transform: scale(1.1);
 .more {
 
     text-decoration: none;
-    color:rgb(225, 150, 39);
+        color:rgb(72, 47, 30);
+
     font-family: "Cairo Play", sans-serif;
     font-optical-sizing: auto;
     font-size: 0.7em;
@@ -335,7 +336,8 @@ transform: scale(1.1);
 }
    
 .more:hover{
-    color:rgb(72, 47, 30);
+      color:rgb(225, 150, 39);
+
 }
 
 

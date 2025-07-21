@@ -162,49 +162,62 @@
   document.getElementById("finalTotal").innerHTML = `<strong>الإجمالي مع الشحن: ${(total + shipping).toFixed(2)} درهم</strong>`;
 }
 
-  function submitOrder(event) {
-    event.preventDefault();
+ function submitOrder(event) {
+  event.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
-    const city = document.getElementById("city").value;
-    const notes = document.getElementById("notes").value;
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const city = document.getElementById("city").value;
+  const notes = document.getElementById("notes").value;
 
-    if (orderData.length === 0) {
-      alert("لا توجد منتجات لتأكيد الطلب.");
-      return;
-    }
-
-    let message = `*طلب جديد من Thinker Honey*%0A`;
-    message += `👤 الاسم: ${name}%0A`;
-    message += `📞 الهاتف: ${phone}%0A`;
-    message += `🏙️ المدينة: ${city}%0A`;
-    if (notes) {
-      message += `📝 ملاحظات: ${notes}%0A`;
-    }
-    message += `%0A🛍️ *المنتجات:*%0A`;
-
-    let total = 0;
-    orderData.forEach(item => {
-      const subtotal = item.price * item.quantity;
-      total += subtotal;
-      message += `- ${item.name} × ${item.quantity} = ${subtotal.toFixed(2)} Dh%0A`;
-    });
-
-    const shipping = calculateShipping(city, total);
-    const grandTotal = total + shipping;
-
-    message += `%0A🚚 *الشحن: ${shipping.toFixed(2)} Dh*`;
-    message += `%0A💰 *المجموع الكلي: ${grandTotal.toFixed(2)} Dh*`;
-
-    const whatsappNumber = "212708318135";
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
-
-    localStorage.removeItem("lastOrder");
-
-      // الرجوع للصفحة الرئيسية
-  window.location.href = "index.html";
+  if (orderData.length === 0) {
+    alert("لا توجد منتجات لتأكيد الطلب.");
+    return;
   }
+
+  let message = `*طلب جديد من Thinker Honey*%0A`;
+  message += `👤 الاسم: ${name}%0A`;
+  message += `📞 الهاتف: ${phone}%0A`;
+  message += `🏙️ المدينة: ${city}%0A`;
+  if (notes) {
+    message += `📝 ملاحظات: ${notes}%0A`;
+  }
+  message += `%0A🛍️ *المنتجات:*%0A`;
+
+  let total = 0;
+  orderData.forEach(item => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+    message += `- ${item.name} × ${item.quantity} = ${subtotal.toFixed(2)} Dh%0A`;
+  });
+
+  const shipping = calculateShipping(city, total);
+  const grandTotal = total + shipping;
+
+  message += `%0A🚚 *الشحن: ${shipping.toFixed(2)} Dh*`;
+  message += `%0A💰 *المجموع الكلي: ${grandTotal.toFixed(2)} Dh*`;
+
+  const whatsappNumber = "212708318135";
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+  // افتح رابط الواتساب في نافذة جديدة
+  window.open(whatsappUrl, "_blank");
+
+  // لا تفرغ السلة الآن
+  // localStorage.removeItem("lastOrder");
+
+  // اختياري: احفظ حالة بأن الطلب تم إرساله
+  localStorage.setItem("orderSent", "true");
+
+  // اعد توجيه المستخدم للصفحة الرئيسية بعد لحظة قصيرة (اختياري)
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 1000);
+
+   // مسح السلة الأصلية
+  localStorage.removeItem('cart');
+}
+
 
   displayOrderSummary();
 </script>
