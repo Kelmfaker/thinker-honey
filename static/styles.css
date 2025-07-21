@@ -107,27 +107,32 @@ align-content: center;
 
 
 .promo-banner {
-    background-image: url(./img/header\ &\ footer.jpg);
-  color: #fffdfd;
-  padding: 10px;
+  background-image: url(./img/header\ &\ footer.jpg);
+  color: #fff;
+  padding: 10px 0;
   text-align: center;
   font-weight: bold;
   font-size: 16px;
   border-top: 2px solid #e6c200;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
+  position: relative; /* بدل absolute */
+  box-sizing: border-box;
+    overflow: hidden; /* يمنع تجاوز المحتوى */
+
 }
 
-/* هذا الكلاس يعمم على كل العناصر اللي تحتاج نفس حدود الصفحة */
-.container {
+.promo-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  width: 100%;
   box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
+
+
+
 
 .promo-banner span {
   color: #d32f2f; /* أحمر */
@@ -139,9 +144,13 @@ align-content: center;
 }
 
 .promo-banner p {
-  display: inline-block;
   white-space: nowrap;
   animation: scroll-left 15s linear infinite;
+   margin: 0;
+  display: block;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
 }
 
 @keyframes scroll-left {
@@ -462,6 +471,15 @@ main {
     margin-top: 120px;
   }
 
+ .promo-banner {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+
+  .promo-container {
+    padding: 0 10px;
+  }
+
   header {
     flex-direction: column;
     padding: 10px 20px;
@@ -476,6 +494,17 @@ main {
     } 
 }
  @media (max-width: 768px) {
+
+
+  .promo-banner {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+
+  .promo-container {
+    padding: 0 10px;
+  }
+
 main {
     margin-top: 120px;
   }
@@ -495,6 +524,15 @@ main {
 .logo { font-size: 1.1em; /* Adjust font size for smaller screens */ } .navigation a { font-size: 0.8em; /* Adjust font size for smaller screens */ } .main h2 { font-size: 1.4em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 1.8em; /* Adjust font size for smaller screens */ } .main h3 { font-size: 1em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.8em; /* Adjust font size for smaller screens */ } .footer-title { font-size: 1em; /* Adjust font size for smaller screens */ } .footer .social-icon a { font-size: 1em; /* Adjust font size for smaller screens */ }
     } 
     @media (max-width: 480px) { 
+
+      .promo-banner {
+    font-size: 10px;
+    padding: 5px 0;
+  }
+
+  .promo-container {
+    padding: 0 10px;
+  }
 
       main {
     margin-top: 120px;
