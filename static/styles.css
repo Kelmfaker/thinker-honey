@@ -155,10 +155,10 @@ align-content: center;
 
 @keyframes scroll-left {
   from {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(100%);
   }
 }
 
@@ -463,10 +463,31 @@ transform: scale(1.1);
   main {
     margin-top: 120px;
   }
+
+  .logos{
+    padding: 10px;
+  }
+
+  .logos .h2{
+    font-size: 10px;
+    text-align: justify;
+  }
 }
+
+
 
 /* Media Queries */
  @media (max-width: 1200px) { 
+  .logos{
+    padding: 10px;
+  }
+
+  .logos .h2{
+    font-size: 10px;
+    text-align: justify;
+  }
+}
+
 main {
     margin-top: 120px;
   }
@@ -492,8 +513,18 @@ main {
     .main h2 span { margin-left: 300px; 
         .logo { font-size: 1em; /* Adjust font size for smaller screens */ } .navigation a { font-size: 0.7em; /* Adjust font size for smaller screens */ } .main h2 { font-size: 1em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 1.3em; /* Adjust font size for smaller screens */ } .main h3 { font-size: 1em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.9em; /* Adjust font size for smaller screens */ } .footer-title { font-size: 0.7em; /* Adjust font size for smaller screens */ } .footer .social-icon a { font-size: 0.9em; /* Adjust font size for smaller screens */ }
     } 
-}
+
  @media (max-width: 768px) {
+
+    .logos{
+    padding: 10px;
+  }
+
+  .logos .h2{
+    font-size: 10px;
+    text-align: justify;
+  }
+}
 
 
   .promo-banner {
@@ -522,8 +553,20 @@ main {
      .main h2 span { margin-left: 100px; } 
   
 .logo { font-size: 1.1em; /* Adjust font size for smaller screens */ } .navigation a { font-size: 0.8em; /* Adjust font size for smaller screens */ } .main h2 { font-size: 1.4em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 1.8em; /* Adjust font size for smaller screens */ } .main h3 { font-size: 1em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.8em; /* Adjust font size for smaller screens */ } .footer-title { font-size: 1em; /* Adjust font size for smaller screens */ } .footer .social-icon a { font-size: 1em; /* Adjust font size for smaller screens */ }
-    } 
+    
+
+
     @media (max-width: 480px) { 
+
+        .logos{
+    padding: 10px;
+  }
+
+  .logos .h2{
+    font-size: 10px;
+    text-align: justify;
+  }
+}
 
       .promo-banner {
     font-size: 10px;
@@ -550,4 +593,4 @@ main {
          .main h2 span { margin-left: 50px; }
        
 .logo { font-size: 0.8em; /* Adjust font size for smaller screens */ } .navigation a { font-size: 0.7em; /* Adjust font size for smaller screens */ } .main h2 { font-size: 1em; /* Adjust font size for smaller screens */; } .main h2 span { font-size: 1em; /* Adjust font size for smaller screens */ } .main h3 { font-size: 1em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.8em; /* Adjust font size for smaller screens */ } .footer-title { font-size: 0.5em; /* Adjust font size for smaller screens */ } .footer .social-icon a { font-size: 0.7em; /* Adjust font size for smaller screens */ }
-         }
+         
