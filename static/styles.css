@@ -67,8 +67,8 @@ letter-spacing: 2px;
 .navigation a{
     color:rgb(27, 18, 1);
     text-decoration: none;
-    font-size: 1.1em;
-    font-weight: 500;
+    font-size: 1.5em;
+    font-weight: 900;
     padding-left: 30px;
 }
 
@@ -78,17 +78,38 @@ letter-spacing: 2px;
 
 
 .main {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: url(./img/working-bee-filling-honey-combs.jpg) no-repeat;
-background-size: 50%;
-    background-position: center;
-    background-attachment: fixed;
-  
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 600px;
+  background-color: #fdfaf4;
+  direction: rtl; /* اتجاه النص */
 
 }
+
+.main-image {
+  flex: 1;
+  min-width: 300px;
+  background: url(./img/working.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100%;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  color:rgb(72, 47, 30);
+  min-width: 300px;
+  background-color: rgba(252, 161, 57, 0.804);
+  font-weight: 600;
+}
+
+
+
 .logos {
 align-items: center;
 display: flex;
@@ -117,7 +138,7 @@ align-content: center;
   padding: 10px 0;
   text-align: center;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
   border-top: 2px solid #e6c200;
   width: 100%;
   position: relative; /* بدل absolute */
@@ -128,6 +149,7 @@ align-content: center;
 
 .promo-container {
   max-width: 1200px;
+  height: 40px;
   margin: 0 auto;
   padding: 0 15px;
   box-sizing: border-box;
@@ -140,22 +162,30 @@ align-content: center;
 
 
 .promo-banner span {
-  color: #d32f2f; /* أحمر */
+  color:rgb(225, 150, 39);
   font-weight: bold;
+    font-size: 14px ;
+
 }
 
 .promo-banner strong {
  color: rgb(225, 150, 39);
+   font-size: 14px ;
+
 }
 
 .promo-banner p {
   white-space: nowrap;
   animation: scroll-left 15s linear infinite;
    margin: 0;
+   padding: 10px;
   display: block;
   word-wrap: break-word;
   word-break: break-word;
   white-space: normal;
+  font-size: 12px ;
+  font-style: oblique;
+
 }
 
 @keyframes scroll-left {
@@ -189,8 +219,8 @@ main .promo-banner {
 
 
 .main .social-icon a {
-    font-size: 1.7em;
-    padding: 30px;
+    font-size: 1.5em;
+    padding: 15px;
     color:rgb(72, 47, 30);
     transition: background-color 0.3s ease, transform 0.3s ease; /* تأثيرات ديناميكية */
 
@@ -204,7 +234,7 @@ main .promo-banner {
 .main h2 {
 color:  rgb(72, 47, 30);
 font-size: 1.8em;
-font-weight: 500;
+font-weight: 800;
 text-align: right;
 
 }
@@ -213,16 +243,16 @@ text-align: right;
     display: inline-block;
     color:  rgb(72, 47, 30);
     font-size: 2em;
-    font-weight: 600;
+    font-weight: 800;
     text-align: right;
     margin-left: 500;
 
 }
 
 .main h3{
-    color:  rgb(72, 47, 30);
+    color: rgb(72, 47, 30);
     font-size: 1.4em;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 1px;
     margin-top: 10px;
     margin-bottom: 30px;
@@ -247,7 +277,7 @@ text-align: right;
 }
 
 .main-btn:hover {
-    background-color: rgb(225, 150, 39); /* تغيير لون الخلفية عند التمرير */
+    background-color: rgb(249, 217, 169); /* تغيير لون الخلفية عند التمرير */
     color:rgb(72, 47, 30);
     transform: scale(1.05); /* تكبير الزر قليلاً عند التمرير */
 }
@@ -387,7 +417,14 @@ transform: scale(1.1);
     border-color: rgb(225, 150, 39); /* تغيير لون الحدود عند التركيز */
     box-shadow: 0 0 5px goldenrod; /* إضافة ظل عند التركيز */
 }
-
+ .center-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* يسمح بتغليف الأزرار على الشاشات الصغيرة */
+    gap: 10px;
+    margin: 0px 0px;
+  }
 .add-to-cart {
     background-color: rgb(251, 234, 191);
 
@@ -398,10 +435,9 @@ transform: scale(1.1);
     font-size: 0.7em;
     font-weight: 700;
     display: inline-block;
-    letter-spacing: 1px;
     border: 2px solid rgb(225, 150, 39); /* حدود الحقل */
-    border-radius: 15px;
-    padding: 5px 10px;
+    border-radius: 5px;
+    padding: 5px 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 
    
@@ -423,15 +459,15 @@ transform: scale(1.1);
 }
 
 .footer-title{
-    font-size: 1.1em;
-    font-weight: 500;
+    font-size: 1.5em;
+    font-weight: 700;
 }
 .footer-title span{
     color: rgb(225, 150, 39);
 }
 
 .footer .social-icon a{
-    font-size: 1.3em;
+    font-size: 1.7em;
     padding: 0 12px 0 0;
     color: bisque;
 }
@@ -609,7 +645,7 @@ main {
        .social-icon a{  font-size: 1em;
         padding: 0 12px 0 0;}
         .main h2 { font-size: 1em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 0.2em; /* Adjust font size for smaller screens */ margin-left: 50px; } .main h3 { font-size: 0.3em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.3em; /* Adjust font size for smaller screens */ }
-        .main {background-image: url(img/phone\ img.jpg); background-size:cover;  /* تغيير حجم الصورة لتناسب الشاشة */ padding: 20px; /* تقليل الحشو للشاشات الصغيرة */ }
+        .main {background-image: url(img/working.jpg); background-size:cover;  /* تغيير حجم الصورة لتناسب الشاشة */ padding: 20px; /* تقليل الحشو للشاشات الصغيرة */ }
         header { padding: 10px 20px; }
          .main h2 span { margin-left: 50px; }
        

@@ -74,15 +74,17 @@
 
   .cart-icon {
     position: relative;
+   
+
   }
 
   #cart-count {
     position: absolute;
-    top: -5px;
-    left: -10px;
+    top: -7px;
+    left: -2px;
     background-color: red;
     color: white;
-    font-size: 12px;
+    font-size: 10px;
     padding: 2px 6px;
     border-radius: 50%;
   }
@@ -143,6 +145,7 @@
   .cart-icon {
     align-self: flex-end;
     margin-top: 10px;
+
   }
 }
 
@@ -198,7 +201,11 @@ font-family: "Tajawal", sans-serif;
       <div class="links" id="nav-links">
 
       <a href="#main">الرئيسية</a>
-      <a href="#store">منتجاتنا</a>
+      <a href="#store">المنتجات</a>
+      <a href="#store">?Thinker Honey</a>
+      <a href="#">تواصل معنا</a>
+
+
        
     </div>
    <div class="cart-icon">
@@ -224,25 +231,23 @@ font-family: "Tajawal", sans-serif;
 
 
     <section class="main" id="main">
+  <div class="main-image"></div>
 
+  <div class="main-content">
+    <h2>مرحبا بكم في متجر<br><span>Thinker Honey</span></h2>
+    <h2>لبيع أجود أنواع العسل الحر</h2>
 
-        <div>
-            
-            <h2>مرحبا بكم في متجر<br><span>Thinker Honey</span></h2>
-            <h2>لبيع أجود أنواع العسل الحر</h2><br><br>
-          
-            <a href="#store" class="main-btn">تسوق اللآن</a>
-            <div class="social-icon">
-                تواصل معنا عبر
-                <a href="https://www.instagram.com/thinker_honey/"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61567279060085"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://wa.me/c/212708318135"><i class="fa-brands fa-whatsapp"></i></a>
-            </div>
-        </div>
-    
- 
+    <a href="#store" class="main-btn">تسوق الآن</a>
 
-    </section>
+    <div class="social-icon">
+      تواصل معنا عبر
+      <a href="https://www.instagram.com/thinker_honey/"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61567279060085"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://wa.me/c/212708318135"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+</section>
+
    
     <section class="content">
 
@@ -297,11 +302,10 @@ font-family: "Tajawal", sans-serif;
         </div>
 
         
-        <div class="quantity-control" style="margin:10px 0;">
+        <div class="center-button">
             <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
-            الكمية <span class="quantity">1</span>
+            Kg <span class="quantity">1</span>
             <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
-          </div>
           
         <button class="add-to-cart"
         data-id="1"
@@ -312,7 +316,8 @@ font-family: "Tajawal", sans-serif;
 
         إضافة إلى السلة
     </button>      
-        
+                  </div>
+
 
     
     </div>
@@ -344,13 +349,12 @@ font-family: "Tajawal", sans-serif;
             </div>
     
         </div>
-        <div class="quantity-control" style="margin:10px 0;">
+        <div class="center-button" style="margin:10px 0;">
             <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)"  disabled
             cursor: not-allowed;">➖</button>
-           الكمية <span class="quantity">0</span>
+           Kg <span class="quantity">0</span>
            <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)"  disabled
           cursor: not-allowed;">➕</button>
-          </div>
 
         <button class="add-to-cart"
         data-id="2"
@@ -365,6 +369,7 @@ font-family: "Tajawal", sans-serif;
         غير متوفر حاليا   </button>
    
       </div>
+          </div>
 
 
         <!-- Product 3 -->
@@ -391,11 +396,10 @@ font-family: "Tajawal", sans-serif;
                 </div>
         
             </div>
-            <div class="quantity-control" style="margin:10px 0;">
+            <div class="center-button" style="margin:10px 0;">
                 <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
-                الكمية <span class="quantity">1</span>
+                Kg <span class="quantity">1</span>
                 <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
-              </div>
               
             <button class="add-to-cart"
             data-id="3"
@@ -408,7 +412,7 @@ font-family: "Tajawal", sans-serif;
         </button>
         
         </div>
-
+        </div>
             <!-- Product 4 -->
     <div class="product">
         <div class="prd-img">
@@ -436,13 +440,12 @@ font-family: "Tajawal", sans-serif;
             </div>
     
         </div>
-        <div class="quantity-control" style="margin:10px 0;">
+        <div class="center-button" style="margin:10px 0;">
             <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)"  disabled
             cursor: not-allowed;">➖</button>
-           الكمية <span class="quantity">0</span>
+           Kg <span class="quantity">0</span>
            <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)"  disabled
           cursor: not-allowed;">➕</button>
-          </div>
           
         <button class="add-to-cart"
         data-id="4"
@@ -457,7 +460,7 @@ font-family: "Tajawal", sans-serif;
      </button>
 
     </div>
-
+    </div>
         <!-- Product 5 -->
         <div class="product">
             <div class="prd-img">
@@ -484,11 +487,10 @@ font-family: "Tajawal", sans-serif;
                 </div>
         
             </div>
-            <div class="quantity-control" style="margin:10px 0;">
+            <div class="center-button" style="margin:10px 0;">
                 <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
-                الكمية <span class="quantity">1</span>
+                Kg <span class="quantity">1</span>
                 <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
-              </div>
               
             <button class="add-to-cart"
             data-id="5"
@@ -502,7 +504,7 @@ font-family: "Tajawal", sans-serif;
         
     
         </div>
-
+        </div>
 
             <!-- Product 6 -->
     <div class="product">
@@ -530,13 +532,12 @@ font-family: "Tajawal", sans-serif;
             </div>
     
         </div>
-        <div class="quantity-control" style="margin:10px 0;">
+        <div class="center-button" style="margin:10px 0;">
             <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)"  disabled
              cursor: not-allowed;">➖</button>
-            الكمية <span class="quantity">0</span>
+            Kg <span class="quantity">0</span>
             <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)"  disabled
            cursor: not-allowed;">➕</button>
-          </div>
           
         <button class="add-to-cart"
         data-id="6"
@@ -552,7 +553,7 @@ font-family: "Tajawal", sans-serif;
     
 
     </div>
-
+    </div>
         <!-- Product 7 -->
         <div class="product">
             <div class="prd-img">
@@ -588,11 +589,10 @@ font-family: "Tajawal", sans-serif;
                 </div>
         
             </div>
-            <div class="quantity-control" style="margin:10px 0;">
+            <div class="center-button" style="margin:10px 0;">
                 <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
-                الكمية <span class="quantity">1</span>
+                Kg <span class="quantity">1</span>
                 <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
-              </div>
               
             <button class="add-to-cart"
             data-id="7"
@@ -606,7 +606,7 @@ font-family: "Tajawal", sans-serif;
         
     
         </div>
-
+        </div>
             <!-- Product 8 -->
     <div class="product">
         <div class="prd-img">
@@ -635,13 +635,12 @@ font-family: "Tajawal", sans-serif;
             </div>
     
         </div>
-        <div class="quantity-control" style="margin:10px 0;">
+        <div class="center-button" style="margin:10px 0;">
             <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)"  disabled
              cursor: not-allowed;">➖</button>
-            الكمية <span class="quantity">0</span>
+            Kg <span class="quantity">0</span>
             <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)"  disabled
            cursor: not-allowed;">➕</button>
-          </div>
           
         <button class="add-to-cart"
         data-id="8"
@@ -653,7 +652,7 @@ font-family: "Tajawal", sans-serif;
 
         غير متوفر حاليا  
      </button>
-    
+        </div>
 
     </div>
 
@@ -686,11 +685,10 @@ font-family: "Tajawal", sans-serif;
                 </div>
         
             </div>
-            <div class="quantity-control" style="margin:10px 0;">
+            <div class="center-button" style="margin:10px 0;">
                 <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
-                الكمية <span class="quantity">1</span>
+                Kg <span class="quantity">1</span>
                 <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
-              </div>
               
             <button class="add-to-cart"
             data-id="9"
@@ -702,7 +700,7 @@ font-family: "Tajawal", sans-serif;
             إضافة إلى السلة
         </button>
         
-    
+            </div>
         </div>
   
         <!-- Product 10 -->
@@ -733,11 +731,10 @@ font-family: "Tajawal", sans-serif;
                 </div>
         
             </div>
-            <div class="quantity-control" style="margin:10px 0;">
+            <div class="center-button" style="margin:10px 0;">
                 <button class="qty-btn" type="button" onclick="changeQuantity(this, -1)">➖</button>
-                الكمية <span class="quantity">1</span>
+                Kg <span class="quantity">1</span>
                 <button class="qty-btn" type="button" onclick="changeQuantity(this, 1)">➕</button>
-              </div>
               
             <button class="add-to-cart"
             data-id="10"
@@ -749,7 +746,7 @@ font-family: "Tajawal", sans-serif;
             إضافة إلى السلة
         </button>
 
-
+            </div>
 
         </div>
 
