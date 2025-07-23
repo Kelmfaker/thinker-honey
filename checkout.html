@@ -99,6 +99,9 @@ padding: 15px;
     <label for="phone">رقم الهاتف:</label>
     <input type="tel" id="phone" required>
 
+    <label for="adresse">العنوان:</label>
+    <input type="text" id="adresse" required>
+
     <label for="city">المدينة:</label>
 <select id="city" required>
   <option value="">اختر المدينة</option>
@@ -180,7 +183,9 @@ padding: 15px;
 
     const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
-    const city = document.getElementById("city").value;
+    const   adresse = document.getElementById("adresse").value;
+        const city = document.getElementById("city").value;
+
     const notes = document.getElementById("notes").value;
 
     if (orderData.length === 0) {
@@ -191,6 +196,8 @@ padding: 15px;
     let message = `*طلب جديد من Thinker Honey*%0A`;
     message += `👤 الاسم: ${name}%0A`;
     message += `📞 الهاتف: ${phone}%0A`;
+    message += `📍 العنوان: ${adresse}%0A`;
+
     message += `🏙️ المدينة: ${city}%0A`;
     if (notes) {
       message += `📝 ملاحظات: ${notes}%0A`;
