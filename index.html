@@ -231,7 +231,10 @@ font-family: "Tajawal", sans-serif;
 
 
     <section class="main" id="main">
-  <div class="main-image"></div>
+        <div class="main-image"></div>
+
+
+
 
   <div class="main-content">
     <h2>مرحبا بكم في متجر<br><span>Thinker Honey</span></h2>
@@ -246,6 +249,15 @@ font-family: "Tajawal", sans-serif;
       <a href="https://wa.me/c/212708318135"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
   </div>
+
+   <div class="promo-banner">
+  <div class="promo-container">
+    <p>
+      التوصيل لجميع المدن <span>مجانا</span> لكل طلبية تجاوزت قيمتها <strong>500 درهم</strong>
+    </p>
+  </div>
+</div>
+
 </section>
 
    
@@ -256,13 +268,7 @@ font-family: "Tajawal", sans-serif;
     <p><span>Thinker Honey</span> <br>ليست مجرد علامة تجارية, بل هي تجسيد للثقة المتبادلة</p>
 </div>
     
- <div class="promo-banner">
-  <div class="promo-container">
-    <p>
-      التوصيل لجميع المدن <span>مجانا</span> لكل طلبية تجاوزت قيمتها <strong>500 درهم</strong>
-    </p>
-  </div>
-</div>
+
 
 <div class="products" id="store">
 
@@ -757,19 +763,19 @@ font-family: "Tajawal", sans-serif;
   <div class="who-title">مرحبًا بكم في مجموعة Thinker Honey!</div>
   <p>
 
-أنا كوثر المفكر، مؤسسة هذه المجموعة وصاحبة علامة Thinker Honey. منذ أكثر من 14 سنة، كنت زبونة مخلصة للعسل الطبيعي، واكتشفت فوائده العظيمة من خلال تجربتي الشخصية وتقاسمتها مع عائلتي ومعارفي.<br>
+أنا كوثر المفكر، مؤسسة هذه المجموعة وصاحبة علامة Thinker Honey. منذ أكثر من 15 سنة، كنت زبونة مخلصة للعسل الطبيعي، واكتشفت فوائده العظيمة من خلال تجربتي الشخصية وتقاسمتها مع عائلتي ومعارفي.<br><br>
 
-اليوم، وبعد سنوات من البحث والاختبار، قررت أن أنقل هذه التجربة إلى الجميع من خلال Thinker Honey، علامة تجارية مبنية على الثقة، الجودة، والشفافية.<br>
+اليوم، وبعد سنوات من البحث والاختبار، قررت أن أنقل هذه التجربة إلى الجميع من خلال Thinker Honey، علامة تجارية مبنية على الثقة، الجودة، والشفافية.<br><br>
 
-في هذه المجموعة، تجدون عسلًا طبيعيًا 100%، مستخرجًا بعناية ليصل إليكم نقيًا كما وهبته لنا الطبيعة. نحن لا نبيع منتجًا فحسب، بل نقدم لكم تجربة أصيلة وطعمًا استثنائيًا، مدعومًا بالمصداقية والتفاني في تقديم الأفضل.<br>
+في هذه المجموعة، تجدون عسلًا طبيعيًا 100%، مستخرجًا بعناية ليصل إليكم نقيًا كما وهبته لنا الطبيعة.<br><br> نحن لا نبيع منتجًا فحسب، بل نقدم لكم تجربة أصيلة وطعمًا استثنائيًا، مدعومًا بالمصداقية والتفاني في تقديم الأفضل.<br><br>
 
-هنا ستجدون:<br>
+هنا ستجدون:<br><br>
 ✔ معلومات قيمة عن العسل وفوائده<br>
 ✔ عروض وخصومات حصرية<br>
 ✔ تجارب وآراء العملاء<br>
-✔ أجوبة على استفساراتكم لضمان اختيار العسل المناسب لكم<br>
+✔ أجوبة على استفساراتكم لضمان اختيار العسل المناسب لكم<br><br>
 
-أنا هنا لأشارككم رحلتي، وأتأكد أنكم تحصلون على العسل الذي يستحق ثقتكم. شكرًا لانضمامكم إلى عائلة Thinker Honey، ومرحبًا بكم في عالم النقاء والطبيعة!</p>
+أنا هنا لأشارككم رحلتي، وأتأكد أنكم تحصلون على العسل الذي يستحق ثقتكم.<br> شكرًا لانضمامكم إلى عائلة Thinker Honey،<br> ومرحبًا بكم في عالم النقاء والطبيعة!</p>
  </div>
 
 <div class="contact-section" id="contact">
@@ -885,10 +891,24 @@ showMessage(`تمت إضافة ${quantity} من "${name}" إلى السلة`);
   updateCartCount();
 
 
-  function toggleMenu() {
+function toggleMenu() {
     const links = document.getElementById("nav-links");
     links.classList.toggle("show");
   }
+
+/*
+  // إغلاق عند الضغط خارج القائمة
+document.addEventListener("click", function (event) {
+  const menu = document.getElementById("nav-links");
+  const button = event.target.closest("button");
+
+  // إذا كان الضغط ليس داخل القائمة أو زرها
+  if (!menu.contains(event.target) && !button) {
+    menu.classList.remove("show");
+  }
+});
+
+*/
 
 
   // تشغيل النافذة عند الضغط على "المزيد"

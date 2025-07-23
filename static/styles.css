@@ -104,9 +104,9 @@ letter-spacing: 2px;
 
 .main-image {
   flex: 1;
-  min-width: 300px;
+  min-width: 200px;
   background-size: cover;
-  height: 100%;
+  height: 80%;
 
 }
 
@@ -133,7 +133,7 @@ letter-spacing: 2px;
   flex-direction: column;
   gap: 20px;
   font-weight: 600;
-  z-index: 10;
+  z-index: 20;
 }
 
 
@@ -161,18 +161,24 @@ align-content: center;
 
 
 .promo-banner {
-  background-image: url(./img/header\ &\ footer.jpg);
-  color: #fff;
+  background-color: rgba(252, 161, 57, 0.85);
+  color: rgb(72, 47, 30);
   padding: 10px 0;
   text-align: center;
-  font-weight: bold;
-  font-size: 20px;
-  border-top: 2px solid #e6c200;
+  font-size: 18px;
+    font-weight: 800;
+
+
+  border-bottom: 2px solid #e6c200;
+    border-top: 2px solid #fb6b04;
+
   width: 100%;
   position: relative; /* بدل absolute */
   box-sizing: border-box;
     overflow: hidden; /* يمنع تجاوز المحتوى */
-
+    margin: 10px 0px;
+border-bottom-left-radius: 10px;
+border-top-right-radius: 5px;
 }
 
 .promo-container {
@@ -190,14 +196,14 @@ align-content: center;
 
 
 .promo-banner span {
-  color:rgb(225, 150, 39);
+  color:rgb(135, 3, 3);
   font-weight: bold;
     font-size: 14px ;
 
 }
 
 .promo-banner strong {
- color: rgb(225, 150, 39);
+  color:rgb(135, 3, 3);
    font-size: 14px ;
 
 }
@@ -248,7 +254,7 @@ main .promo-banner {
 
 .main .social-icon a {
     font-size: 1.5em;
-    padding: 15px;
+    padding: 10px;
     color:rgb(72, 47, 30);
     transition: background-color 0.3s ease, transform 0.3s ease; /* تأثيرات ديناميكية */
 
@@ -402,17 +408,23 @@ transform: scale(1.1);
      font-style: normal;
      font-variation-settings: "slnt" 0;
 padding: 10px;
-     background-color: bisque;
+     background-color: rgba(255, 228, 196, 0.299);
+   
+     border-bottom-left-radius: 30px;
+border-top-right-radius: 15px;
 }
 
 .contact-section {
+       background-color: rgba(255, 228, 196, 0.299);
+
   text-align: center;
   margin-top: 40px;
   margin-bottom: 20px;
+  padding: 10px;
 }
 
 .contact-text {
-  font-size: 18px;
+  font-size: 14px;
   margin-bottom: 10px;
   color: #3e2e12;
   font-weight: bold;
@@ -445,7 +457,7 @@ padding: 10px;
 
     font-family: "Cairo Play", sans-serif;
     font-optical-sizing: auto;
-    font-size: 0.7em;
+    font-size: 0.9em;
     font-weight: 700;
     font-style: normal;
     font-variation-settings:
