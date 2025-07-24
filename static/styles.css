@@ -17,13 +17,22 @@
     scroll-behavior: smooth;
 
 }
+/
+body1{
+color: #e2c79b;
+color:  #482f1e;
+color: #8f6945;
+color:  #ede2cf;
+color:  #e19627;
 
+}
 
+*/
 
 body {
     direction: rtl;
     text-align: right;
-    background-image: url(./img/5361107.jpg);
+    background-image: url(./img/9205954.jpg);
 
 }
 header {
@@ -41,39 +50,41 @@ header {
 
 .logo{
 text-decoration: none;
-color: rgb(237, 226, 207);
+color:  #e2c79b;
 text-transform: uppercase;
-font-weight: 700;
-font-size: 1.7em;
+font-weight: 500;
+font-size: 1.3em;
 letter-spacing: 2px;
 
 }
 
 .navigation{
-    background-color: rgb(225, 150, 39);
+    background-color: #e2c79b;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding: 10px 20px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid  #e2c79b;
   width: 100%;
   box-sizing: border-box;
   position: sticky;
   top: 0;
   z-index: 1000;
+  margin-right: 30px;
 }
 
 .navigation a{
-    color:rgb(27, 18, 1);
+    color:  #482f1e;
     text-decoration: none;
-    font-size: 1.5em;
-    font-weight: 900;
-    padding-left: 30px;
+    font-size: 1em;
+    font-weight: 700;
+        padding-left: 30px;
+
 }
 
 .navigation a:hover{
-    color: rgb(127, 43, 4);
+    color: #8f6945;
 } 
 
 
@@ -90,15 +101,16 @@ letter-spacing: 2px;
 
 .main {
   display: flex;
-  justify-content: flex-end;   /* المحتوى في اليمين */
-  align-items: flex-start;     /* ← المحاذاة من الأعلى */
+  justify-content: flex-start;   /* المحتوى في اليمين */
+  align-items:center;     /* ← المحاذاة من الأعلى */
 
   width: 100%;
   min-height: 100vh;
-    padding: 100px 40px 40px 40px; /* ← padding top بسبب الهيدر */
-  background: url(./img/working-bee-filling-honey-combs.jpg) no-repeat left center fixed;
+    padding: 40px 100px  40px 40px; /* ← padding top بسبب الهيدر */
+  background: url(./img/1893.jpg) no-repeat  left center fixed;
 
-  background-size: 50% auto;
+  background-size: 100% auto;
+  font-size: 14px;
 }
 
 
@@ -124,16 +136,17 @@ letter-spacing: 2px;
 }*/
 
 .main-content {
-  max-width: 500px;
-  background-color: rgba(252, 161, 57, 0.85);
+  width: 30%;
+  background-color: #e2c79bf1;
   border-radius: 10px;
-  color: rgb(72, 47, 30);
+  color: #482f1e;
   padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  font-weight: 600;
-  z-index: 20;
+  font-weight: 700;
+  z-index: 10;
+  justify-content: center;
 }
 
 
@@ -161,8 +174,8 @@ align-content: center;
 
 
 .promo-banner {
-  background-color: rgba(252, 161, 57, 0.85);
-  color: rgb(72, 47, 30);
+  background-color: #e2c79b;
+  color: #482f1e;
   padding: 10px 0;
   text-align: center;
   font-size: 18px;
@@ -170,13 +183,12 @@ align-content: center;
 
 
   border-bottom: 2px solid #e6c200;
-    border-top: 2px solid #fb6b04;
+    border-top: 2px solid #e19627;
 
   width: 100%;
   position: relative; /* بدل absolute */
   box-sizing: border-box;
     overflow: hidden; /* يمنع تجاوز المحتوى */
-    margin: 10px 0px;
 border-bottom-left-radius: 10px;
 border-top-right-radius: 5px;
 }
@@ -196,15 +208,15 @@ border-top-right-radius: 5px;
 
 
 .promo-banner span {
-  color:rgb(135, 3, 3);
+  color: #9e3301;
   font-weight: bold;
-    font-size: 14px ;
+    font-size: 12px ;
 
 }
 
 .promo-banner strong {
-  color:rgb(135, 3, 3);
-   font-size: 14px ;
+  color: #9e3301;
+   font-size: 12px ;
 
 }
 
@@ -217,7 +229,7 @@ border-top-right-radius: 5px;
   word-wrap: break-word;
   word-break: break-word;
   white-space: normal;
-  font-size: 12px ;
+  font-size: 9px ;
   font-style: oblique;
 
 }
@@ -242,7 +254,7 @@ border-top-right-radius: 5px;
 
 main .promo-banner {
   background-color: #fdd835;
-  color: #000;
+  color:  #482f1e;
   padding: 12px;
   text-align: center;
   font-weight: bold;
@@ -255,7 +267,7 @@ main .promo-banner {
 .main .social-icon a {
     font-size: 1.5em;
     padding: 10px;
-    color:rgb(72, 47, 30);
+    color: #482f1e;
     transition: background-color 0.3s ease, transform 0.3s ease; /* تأثيرات ديناميكية */
 
 }
@@ -266,8 +278,8 @@ main .promo-banner {
 }
 
 .main h2 {
-color:  rgb(72, 47, 30);
-font-size: 1.8em;
+color:  #482f1e;
+font-size: 1.2em;
 font-weight: 800;
 text-align: right;
 
@@ -275,8 +287,8 @@ text-align: right;
 
 .main h2 span {
     display: inline-block;
-    color:  rgb(72, 47, 30);
-    font-size: 2em;
+    color:  #482f1e;
+    font-size: 1.5em;
     font-weight: 800;
     text-align: right;
     margin-left: 500;
@@ -284,8 +296,8 @@ text-align: right;
 }
 
 .main h3{
-    color: rgb(72, 47, 30);
-    font-size: 1.4em;
+    color: #482f1e;
+    font-size: 1.2em;
     font-weight: 800;
     letter-spacing: 1px;
     margin-top: 10px;
@@ -296,8 +308,8 @@ text-align: right;
 
 .main-btn {
     text-align: center;
-    color:rgb(237, 226, 207);
-    background-color: rgb(72, 47, 30);
+    color:#e2c79b;
+    background-color:  #482f1e;
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 600;
@@ -312,7 +324,7 @@ text-align: right;
 
 .main-btn:hover {
     background-color: rgb(249, 217, 169); /* تغيير لون الخلفية عند التمرير */
-    color:rgb(72, 47, 30);
+    color: #482f1e;
     transform: scale(1.05); /* تكبير الزر قليلاً عند التمرير */
 }
 
@@ -333,7 +345,7 @@ margin: 30px;
 
 .product{
     background-color: rgba(240, 231, 141, 0.141);
-    border: 2px solid rgb(72, 47, 30);
+    border: 2px solid  #482f1e;
     max-height: 30em;
     min-height: 15em;
     width: 15em;
@@ -377,7 +389,7 @@ transform: scale(1.1);
 }
 .description{
     font-size: 0.9em;
-    color: rgb(72, 47, 30);
+    color:  #482f1e;
     text-align: justify;
     max-height: 6em; /* تحديد الحد الأقصى للارتفاع */
     /* max-width: 400px;  تحديد الحد الأقصى للعرض */ 
@@ -398,7 +410,7 @@ transform: scale(1.1);
 .who{
   margin: 30px;
     font-size: 0.9em;
-    color: rgb(72, 47, 30);
+    color:  #482f1e;
     text-align: justify;
      overflow: hidden; /* إخفاء النص الزائد */ 
 
@@ -408,14 +420,14 @@ transform: scale(1.1);
      font-style: normal;
      font-variation-settings: "slnt" 0;
 padding: 10px;
-     background-color: rgba(255, 228, 196, 0.299);
+     background-color: #e2c79b;
    
      border-bottom-left-radius: 30px;
 border-top-right-radius: 15px;
 }
 
 .contact-section {
-       background-color: rgba(255, 228, 196, 0.299);
+       background-color:#e2c79b;
 
   text-align: center;
   margin-top: 40px;
@@ -425,20 +437,22 @@ border-top-right-radius: 15px;
 
 .contact-text {
   font-size: 14px;
+       font-weight: 600;
+
   margin-bottom: 10px;
-  color: #3e2e12;
+  color: #482f1e;
   font-weight: bold;
 }
 
 .social-icons a {
   margin: 0 10px;
   font-size: 24px;
-  color: #2c200f;
+  color: #482f1e;
   transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #b8871f;
+  color:#e19627;
 }
 
 
@@ -453,7 +467,7 @@ border-top-right-radius: 15px;
 .more {
 
     text-decoration: none;
-        color:rgb(72, 47, 30);
+        color: #482f1e;
 
     font-family: "Cairo Play", sans-serif;
     font-optical-sizing: auto;
@@ -466,14 +480,14 @@ border-top-right-radius: 15px;
 }
    
 .more:hover{
-      color:rgb(225, 150, 39);
+      color:#e19627;
 
 }
 
 
 .quantity {
     font-size: 0.9em; /* تصغير حجم الخط */
-    color: #555; /* تغيير لون النص */
+    color: #482f1e; /* تغيير لون النص */
     margin-bottom: 10px; /* مسافة أسفل النص */
 }
 
@@ -482,7 +496,7 @@ border-top-right-radius: 15px;
     justify-content: space-between;
     align-items: center; /* محاذاة العناصر عموديًا */
    padding: 0.5em;
-     background-color:rgb(72, 47, 30);
+     background-color: #482f1e;
 }
 
 .quantity-input {
@@ -490,7 +504,7 @@ border-top-right-radius: 15px;
     width: 50px; /* تحديد عرض ثابت */
     padding: 5px 10px; /* إضافة حشو داخلي */
     margin-right: 10px; /* مسافة يمين الحقل */
-    border: 2px solid rgb(225, 150, 39); /* حدود الحقل */
+    border: 2px solid #e19627; /* حدود الحقل */
     border-radius: 15px; /* زوايا مستديرة */
     text-align: center;
     transition: border-color 0.3s ease, box-shadow 0.3s ease; /* تأثيرات ديناميكية */
@@ -500,7 +514,7 @@ border-top-right-radius: 15px;
 }
 
 .quantity-input:focus {
-    border-color: rgb(225, 150, 39); /* تغيير لون الحدود عند التركيز */
+    border-color: #e19627;; /* تغيير لون الحدود عند التركيز */
     box-shadow: 0 0 5px goldenrod; /* إضافة ظل عند التركيز */
 }
  .center-button {
@@ -516,12 +530,12 @@ border-top-right-radius: 15px;
 
     cursor: pointer;
     text-align: center;
-    color:rgb(10, 0, 0);
+    color: #482f1e;
     text-decoration: none;
     font-size: 0.7em;
     font-weight: 700;
     display: inline-block;
-    border: 2px solid rgb(225, 150, 39); /* حدود الحقل */
+    border: 2px solid #e19627;; /* حدود الحقل */
     border-radius: 5px;
     padding: 5px 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -531,7 +545,7 @@ border-top-right-radius: 15px;
 }
 
 .add-to-cart:hover {
-    background-color: rgb(225, 150, 39);
+    background-color: #e19627;;
     transform: scale(1.05);
 }
 
@@ -545,15 +559,15 @@ border-top-right-radius: 15px;
 }
 
 .footer-title{
-    font-size: 1.5em;
+    font-size: 12px;
     font-weight: 700;
 }
 .footer-title span{
-    color: rgb(225, 150, 39);
+    color: #e19627;;
 }
 
 .footer .social-icon a{
-    font-size: 1.7em;
+    font-size: 12px;
     padding: 0 12px 0 0;
     color: bisque;
 }
@@ -568,11 +582,11 @@ border-top-right-radius: 15px;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة */
+    background-color: #e2c79b; /* خلفية شفافة */
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #e2c79b;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -590,7 +604,7 @@ border-top-right-radius: 15px;
 
 .close-btn:hover,
 .close-btn:focus {
-    color: rgb(72, 47, 30);
+    color:  #482f1e;
     text-decoration: none;
     cursor: pointer;
 }
@@ -603,9 +617,7 @@ border-top-right-radius: 15px;
     text-align: center;
   }
 
-  main {
-    margin-top: 120px;
-  }
+
 
   .logos{
     padding: 10px;
@@ -615,7 +627,33 @@ border-top-right-radius: 15px;
     font-size: 10px;
     text-align: justify;
   }
-}
+
+  .navigation {
+
+    justify-content: space-between;
+    padding-left: 5px;
+  }
+
+  .main {
+    flex-direction: column; /* عرض العمود */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    text-align: center;
+
+  }
+
+  .main-content {
+  background-color: #e2c79bc0;
+
+    width: 100%;
+    padding: 20px;
+  }
+ 
+};
 
 
 
@@ -629,7 +667,7 @@ border-top-right-radius: 15px;
     font-size: 10px;
     text-align: justify;
   }
-}
+
 
 main {
     margin-top: 120px;
@@ -654,8 +692,9 @@ main {
     .main { background-size: contain; /* تغيير حجم الصورة لتناسب الشاشة */ }
 
     .main h2 span { margin-left: 300px; 
-        .logo { font-size: 1em; /* Adjust font size for smaller screens */ } .navigation a { font-size: 0.7em; /* Adjust font size for smaller screens */ } .main h2 { font-size: 1em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 1.3em; /* Adjust font size for smaller screens */ } .main h3 { font-size: 1em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.9em; /* Adjust font size for smaller screens */ } .footer-title { font-size: 0.7em; /* Adjust font size for smaller screens */ } .footer .social-icon a { font-size: 0.9em; /* Adjust font size for smaller screens */ }
+        .logo { font-size: 1em; /* Adjust font size for smaller screens */ } .navigation a { font-size: 0.5em; /* Adjust font size for smaller screens */ } .main h2 { font-size: 1em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 1.3em; /* Adjust font size for smaller screens */ } .main h3 { font-size: 1em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.9em; /* Adjust font size for smaller screens */ } .footer-title { font-size: 0.7em; /* Adjust font size for smaller screens */ } .footer .social-icon a { font-size: 0.9em; /* Adjust font size for smaller screens */ }
     } 
+  };
 
  @media (max-width: 768px) {
 
@@ -667,7 +706,7 @@ main {
     font-size: 10px;
     text-align: justify;
   }
-}
+
 
 
   .promo-banner {
@@ -679,19 +718,24 @@ main {
     padding: 0 10px;
   }
 
-  .main {
-    flex-direction: column;
-    background-size: cover;
+.main {
+    flex-direction: column; /* عرض العمود */
     justify-content: center;
     align-items: center;
-    padding-top: 120px;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    text-align: center;
+
   }
 
   .main-content {
-    width: 90%;
-    margin: 0 auto;
-  }
+  background-color: #e2c79bc0;
 
+    width: 100%;
+    padding: 20px;
+  }
       header {
     flex-direction: column;
     padding: 10px 20px;
@@ -705,9 +749,11 @@ main {
 
      .main h2 span { margin-left: 100px; } 
   
-.logo { font-size: 1.1em; /* Adjust font size for smaller screens */ } .navigation a { font-size: 0.8em; /* Adjust font size for smaller screens */ } .main h2 { font-size: 1.4em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 1.8em; /* Adjust font size for smaller screens */ } .main h3 { font-size: 1em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.8em; /* Adjust font size for smaller screens */ } .footer-title { font-size: 1em; /* Adjust font size for smaller screens */ } .footer .social-icon a { font-size: 1em; /* Adjust font size for smaller screens */ }
-    
+.logo { font-size: 1.1em; /* Adjust font size for smaller screens */ } .navigation a { font-size: 0.5em; padding-left: 10px; /* Adjust font size for smaller screens */
 
+} .main h2 { font-size: 1.4em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 1.8em; /* Adjust font size for smaller screens */ } .main h3 { font-size: 1em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.8em; /* Adjust font size for smaller screens */ } .footer-title { font-size: 1em; /* Adjust font size for smaller screens */ } .footer .social-icon a { font-size: 1em; /* Adjust font size for smaller screens */ }
+    
+    };
 
     @media (max-width: 480px) { 
 
@@ -719,7 +765,24 @@ main {
     font-size: 10px;
     text-align: justify;
   }
-}
+.main {
+    flex-direction: column; /* عرض العمود */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    text-align: center;
+
+  }
+
+  .main-content {
+  background-color: #e2c79bc0;
+
+    width: 100%;
+    padding: 20px;
+  }
 
       .promo-banner {
     font-size: 10px;
@@ -741,9 +804,15 @@ main {
        .social-icon a{  font-size: 1em;
         padding: 0 12px 0 0;}
         .main h2 { font-size: 1em; /* Adjust font size for smaller screens */ } .main h2 span { font-size: 0.2em; /* Adjust font size for smaller screens */ margin-left: 50px; } .main h3 { font-size: 0.3em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.3em; /* Adjust font size for smaller screens */ }
-        .main {background-image: url(img/working.jpg); background-size:cover;  /* تغيير حجم الصورة لتناسب الشاشة */ padding: 20px; /* تقليل الحشو للشاشات الصغيرة */ }
+        .main {background-image: url(img/9205954.jpg); background-size:cover;  /* تغيير حجم الصورة لتناسب الشاشة */ padding: 20px; /* تقليل الحشو للشاشات الصغيرة */ }
         header { padding: 10px 20px; }
          .main h2 span { margin-left: 50px; }
        
-.logo { font-size: 0.8em; /* Adjust font size for smaller screens */ } .navigation a { font-size: 0.7em; /* Adjust font size for smaller screens */ } .main h2 { font-size: 1em; /* Adjust font size for smaller screens */; } .main h2 span { font-size: 1em; /* Adjust font size for smaller screens */ } .main h3 { font-size: 1em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.8em; /* Adjust font size for smaller screens */ } .footer-title { font-size: 0.5em; /* Adjust font size for smaller screens */ } .footer .social-icon a { font-size: 0.7em; /* Adjust font size for smaller screens */ }
+.logo { font-size: 0.8em; /* Adjust font size for smaller screens */ } 
+
+
+.navigation a { font-size: 0.5em; padding-left: 2px; /* Adjust font size for smaller screens */
+
+} .main h2 { font-size: 1em; /* Adjust font size for smaller screens */; } .main h2 span { font-size: 1em; /* Adjust font size for smaller screens */ } .main h3 { font-size: 1em; /* Adjust font size for smaller screens */ } .main-btn { font-size: 0.8em; /* Adjust font size for smaller screens */ } .footer-title { font-size: 0.5em; /* Adjust font size for smaller screens */ } .footer .social-icon a { font-size: 0.7em; /* Adjust font size for smaller screens */ }
+       };
          
