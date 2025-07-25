@@ -87,13 +87,6 @@ padding: 10px;
     color: #8f6945;
 } 
 
-.links {
-  display: none;
-}
-
-.links.show {
-  display: block;
-}
 
 
 /*.main {
