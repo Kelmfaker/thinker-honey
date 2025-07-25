@@ -52,9 +52,9 @@ header {
 text-decoration: none;
 color:  #e2c79b;
 text-transform: uppercase;
-font-weight: 500;
+font-weight: 800;
 font-size: 1.3em;
-letter-spacing: 2px;
+letter-spacing: 5px;
 
 }
 
@@ -64,14 +64,15 @@ letter-spacing: 2px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 10px 20px;
-  border-bottom: 1px solid  #e2c79b;
+  padding: 10px;
+  border-bottom: 3px solid  #f8f7f7;
   width: 100%;
   box-sizing: border-box;
   position: sticky;
   top: 0;
   z-index: 1000;
-  margin-right: 30px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 30px;
 }
 
 .navigation a{
@@ -79,8 +80,7 @@ letter-spacing: 2px;
     text-decoration: none;
     font-size: 1em;
     font-weight: 700;
-        padding-left: 30px;
-
+padding: 10px;
 }
 
 .navigation a:hover{
@@ -147,6 +147,11 @@ letter-spacing: 2px;
   font-weight: 700;
   z-index: 10;
   justify-content: center;
+    border-bottom-left-radius: 70px;
+border-top-right-radius: 40px;
+
+border-right: 4px solid #482f1e;
+border-bottom: 4px solid #e6c200;
 }
 
 
@@ -160,7 +165,9 @@ align-content: center;
 }
 
 .logos .p{
-  font-size: 10px;
+  font-size: 16px;
+      font-weight: 800;
+
   text-align: justify;
 }
 
@@ -176,14 +183,13 @@ align-content: center;
 .promo-banner {
   background-color: #e2c79b;
   color: #482f1e;
-  padding: 10px 0;
   text-align: center;
   font-size: 18px;
     font-weight: 800;
 
 
-  border-bottom: 2px solid #e6c200;
-    border-top: 2px solid #e19627;
+  border-bottom: 4px solid #e6c200;
+    border-top: 4px solid #e19627;
 
   width: 100%;
   position: relative; /* بدل absolute */
@@ -222,17 +228,16 @@ border-top-right-radius: 5px;
 
 .promo-banner p {
   white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
   animation: scroll-left 15s linear infinite;
-   margin: 0;
-   padding: 10px;
-  display: block;
-  word-wrap: break-word;
-  word-break: break-word;
-  white-space: normal;
-  font-size: 9px ;
+  margin: 0;
+  padding: 10px;
+  font-size: 12px;
   font-style: oblique;
-
 }
+
+
 
 @keyframes scroll-left {
   from {
@@ -356,6 +361,24 @@ margin: 30px;
     
     }
 
+.prices {
+  display: flex;
+  flex-direction: column; /* ← لجعلها تحت بعض */
+  align-items: flex-start;
+  margin-top: 5px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 14px;
+}
+
+.new-price {
+  color: #c0392b;
+  font-weight: bold;
+  font-size: 16px;
+}
 
 
 .product:hover{
@@ -419,20 +442,30 @@ transform: scale(1.1);
      font-weight: 600;
      font-style: normal;
      font-variation-settings: "slnt" 0;
-padding: 10px;
+padding: 20px;
      background-color: #e2c79b;
    
-     border-bottom-left-radius: 30px;
-border-top-right-radius: 15px;
+     border-bottom-left-radius: 70px;
+border-top-right-radius: 40px;
+
+border-bottom: 4px solid #482f1e;
+border-right: 4px solid #e6c200;
 }
 
 .contact-section {
-       background-color:#e2c79b;
+       background-color:#482f1e;
 
   text-align: center;
   margin-top: 40px;
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 20px;
+  margin-left: 40%;
+
+       border-bottom-left-radius: 40px;
+border-top-left-radius: 40px;
+border-width: 5px;
+border-top: 4px solid #e19627;
+border-left: 4px solid #e6c200;
 }
 
 .contact-text {
@@ -440,14 +473,15 @@ border-top-right-radius: 15px;
        font-weight: 600;
 
   margin-bottom: 10px;
-  color: #482f1e;
+  color: #e2c79b;
   font-weight: bold;
+
 }
 
 .social-icons a {
   margin: 0 10px;
   font-size: 24px;
-  color: #482f1e;
+  color: #e2c79b;
   transition: color 0.3s ease;
 }
 
