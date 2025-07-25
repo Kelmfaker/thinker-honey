@@ -216,7 +216,7 @@ font-family: "Tajawal", sans-serif;
 
       </a>
     </div>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="hamburger" id="menu-toggle" onclick="toggleMenu()">☰</div>
 
  <div id="message" style="display:none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
  background: #28a745; color: white; padding: 10px 20px; border-radius: 5px; z-index: 1000;">
@@ -267,11 +267,9 @@ font-family: "Tajawal", sans-serif;
   <div class="promo-container">
     <p>
 تجدون في متجرنا <span>Thinker Honey</span> عروض وتخفيضات حصرية  <strong>على كل منتجات العسل المتوفرة</strong>
-    </p>
-    <p>
-<span>الشحن غير متوفر حاليا</span> 
-    </p>
+  </p>
   </div>
+    
 </div>
 
 <div class="products" id="store">
@@ -324,7 +322,7 @@ font-family: "Tajawal", sans-serif;
         <button class="add-to-cart"
         data-id="1"
         data-name="عسل الدغموس"
-        data-price="400"
+        data-price="350"
         data-image="static/img/prd-img/f.jpg"
         data-max="5" <!-- الحد الأقصى هنا 5 -->
 
@@ -423,7 +421,7 @@ font-family: "Tajawal", sans-serif;
             <button class="add-to-cart"
             data-id="3"
             data-name="عسل الكالبتوس"
-            data-price=200"
+            data-price="180"
             data-image="static/img/prd-img/kalibtouse.jpg"
             data-max="6" <!-- الحد الأقصى هنا 5 -->
     
@@ -471,7 +469,7 @@ font-family: "Tajawal", sans-serif;
         <button class="add-to-cart"
         data-id="4"
         data-name="عسل السدر"
-        data-price="300"
+        data-price="250"
         data-image="static/img/prd-img/i.jpg"
         data-max="5" 
         disabled
@@ -518,7 +516,7 @@ font-family: "Tajawal", sans-serif;
             <button class="add-to-cart"
             data-id="5"
             data-name="عسل الزكوم"
-            data-price="300"
+            data-price="250"
             data-image="static/img/prd-img/kalibtouse.jpg"
             data-max="5" <!-- الحد الأقصى هنا 5 -->
     
@@ -624,7 +622,7 @@ font-family: "Tajawal", sans-serif;
             <button class="add-to-cart"
             data-id="7"
             data-name="عسل الأعشاب"
-            data-price="250"
+            data-price="200"
             data-image="static/img/prd-img/g.jpg"
             data-max="4" <!-- الحد الأقصى هنا 5 -->
     
@@ -674,7 +672,7 @@ font-family: "Tajawal", sans-serif;
         <button class="add-to-cart"
         data-id="8"
         data-name="عسل الشوك"
-        data-price="200"
+        data-price="180"
         data-image="static/img/prd-img/i.jpg"
         data-max="5"  disabled
         style="background-color: gray; cursor: not-allowed;">
@@ -724,7 +722,7 @@ font-family: "Tajawal", sans-serif;
             <button class="add-to-cart"
             data-id="9"
             data-name="عسل الجبلي"
-            data-price="220"
+            data-price="200"
             data-image="static/img/prd-img/h.jpg.jpg"
             data-max="5" <!-- الحد الأقصى هنا 5 -->
     
@@ -772,7 +770,7 @@ font-family: "Tajawal", sans-serif;
             <button class="add-to-cart"
             data-id="10"
             data-name="عسل الليمون"
-            data-price="120"
+            data-price="100"
             data-image="static/img/prd-img/kalibtouse.jpg"
             data-max="19" <!-- الحد الأقصى هنا 5 -->
     
@@ -917,17 +915,38 @@ showMessage(`تمت إضافة ${quantity} من "${name}" إلى السلة`);
   // شغلها مباشرة عند تحميل الصفحة
   updateCartCount();
 
+const toggleButton = document.getElementById("menu-toggle");
+const menu = document.getElementById("nav-links");
 
-function toggleMenu() {
-    const links = document.getElementById("nav-links");
-    links.classList.toggle("show");
+toggleButton.addEventListener("click", function (e) {
+  e.stopPropagation(); // يمنع الحدث من الوصول إلى document
+  menu.classList.toggle("show");
+});
+
+// إغلاق القائمة عند الضغط خارجها
+document.addEventListener("click", function (event) {
+  if (!menu.contains(event.target) && !toggleButton.contains(event.target)) {
+    menu.classList.remove("show");
   }
+});
+// إغلاق عند الضغط على أحد الروابط داخل القائمة
+const links = menu.querySelectorAll("a");
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("show");
+  });
+});
 
-/*
+// إغلاق القائمة عند تمرير الصفحة
+window.addEventListener("scroll", () => {
+  menu.classList.remove("show");
+});
+
   // إغلاق عند الضغط خارج القائمة
 document.addEventListener("click", function (event) {
   const menu = document.getElementById("nav-links");
   const button = event.target.closest("button");
+
 
   // إذا كان الضغط ليس داخل القائمة أو زرها
   if (!menu.contains(event.target) && !button) {
@@ -935,7 +954,6 @@ document.addEventListener("click", function (event) {
   }
 });
 
-*/
 
 
   // تشغيل النافذة عند الضغط على "المزيد"

@@ -87,6 +87,14 @@ padding: 10px;
     color: #8f6945;
 } 
 
+.links {
+  display: none;
+}
+
+.links.show {
+  display: block;
+}
+
 
 /*.main {
   display: flex;
@@ -623,7 +631,7 @@ border-left: 4px solid #e6c200;
     background-color: #e2c79b;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 2px solid #888;
     width: 80%;
     max-width: 300px;
     text-align: center;
