@@ -216,14 +216,15 @@ border-top-right-radius: 5px;
 
 .promo-banner span {
   color: #9e3301;
-  font-weight: bold;
-    font-size: 12px ;
+  font-weight: 700;
+    font-size: 16px ;
 
 }
 
 .promo-banner strong {
   color: #9e3301;
-   font-size: 12px ;
+   font-size: 16px ;
+   font-weight: 700;
 
 }
 
@@ -234,8 +235,9 @@ border-top-right-radius: 5px;
   animation: scroll-left 15s linear infinite;
   margin: 0;
   padding: 10px;
-  font-size: 12px;
-  font-style: oblique;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 6px;
 }
 
 
