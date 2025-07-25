@@ -471,25 +471,7 @@ border-top: 4px solid #e19627;
 border-left: 4px solid #e6c200;
 }
 
-.visitor-box {
 
-   background-color:#482f1e;
-
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  padding: 20px;
-  margin-right: 40%;
-
-       border-bottom-right-radius: 40px;
-border-top-right-radius: 40px;
-border-width: 5px;
-border-bottom: 4px solid #e19627;
-border-right: 4px solid #e6c200;
-color: #e2c79b;
-font-size: 14px;
-       font-weight: 600;
-}
 
 .contact-text {
   font-size: 14px;
@@ -664,6 +646,49 @@ font-size: 14px;
     text-decoration: none;
     cursor: pointer;
 }
+
+
+.main-wrapper {
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.side-img {
+  position: absolute;
+  top: 50%;
+  width: 80px;
+  height: auto;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.side-img.right {
+  right: 0;
+}
+
+.side-img.left {
+  left: 0;
+}
+
+.wrapper-content {
+  position: relative;
+  z-index: 2; /* فوق الصور */
+  text-align: center;
+  color: #482f1e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ضبط للشاشات الصغيرة والهواتف */
 @media (max-width: 768px) {

@@ -258,10 +258,17 @@ font-family: "Tajawal", sans-serif;
    
     <section class="content">
 
-       <div class="logos">
-    <img src="./static/img/logo1.png" class="logo2">
-    <p><span>Thinker Honey</span> <br>ليست مجرد علامة تجارية, بل هي تجسيد للثقة المتبادلة</p>
+      <div class="main-wrapper">
+  <img src="./static/img/logo1.png" alt="يمين" class="side-img right">
+  <img src="./static/img/logo2.png" alt="يسار" class="side-img left">
+
+  <div class="wrapper-content">
+    <h2>Thinker Honey</h2>
+    <p>ليست مجرد علامة تجارية<br> بل هي تجسيد للثقة المتبادلة</p>
 </div>
+</div>
+
+    
     
  <div class="promo-banner">
   <div class="promo-container">
@@ -803,6 +810,11 @@ font-family: "Tajawal", sans-serif;
 أنا هنا لأشارككم رحلتي، وأتأكد أنكم تحصلون على العسل الذي يستحق ثقتكم.<br> شكرًا لانضمامكم إلى عائلة Thinker Honey،<br> ومرحبًا بكم في عالم النقاء والطبيعة!</p>
  </div>
 
+
+
+
+
+
 <div class="contact-section" id="contact">
   <p class="contact-text">تواصلوا معنا عبر :</p>
   <div class="social-icons">
@@ -812,9 +824,16 @@ font-family: "Tajawal", sans-serif;
   </div>
 </div>
 
-<div class="visitor-box">
-<p>عدد الزوار: <span id="visitor-count">0</span></p>
+<div class="main-wrapper">
+  <img src="static/img/view-3d-cartoon-character-bee.png" alt="يسار" class="side-img left">
+  <img src="static/img/view-3d-bee-insect-with-origami-effect.png" alt="يمين" class="side-img right">
+
+  <div class="wrapper-content">
+    <h2>مرحبا بكم في Thinker Honey</h2>
+    <p>أفضل أنواع العسل الطبيعي تجدونها هنا.</p>
+  </div>
 </div>
+
 
 <footer class="footer">
     <p class="footer-title">حقوق الطبع والنشر @ <span>كوثر المفكر</span></p>
@@ -829,11 +848,6 @@ font-family: "Tajawal", sans-serif;
 
 <script>
 
-fetch('https://api.countapi.xyz/hit/thinker-honey/visits')
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById('visitor-count').textContent = data.value;
-  });
 
 
 // إذا تم إرسال الطلب مسبقًا عبر واتساب
