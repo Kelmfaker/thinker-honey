@@ -813,7 +813,7 @@ font-family: "Tajawal", sans-serif;
 </div>
 
 <div class="visitor-box">
-  <p>عدد زوار الموقع: <span id="visitor-count">...</span></p>
+<p>عدد الزوار: <span id="visitor-count">0</span></p>
 </div>
 
 <footer class="footer">
@@ -829,12 +829,12 @@ font-family: "Tajawal", sans-serif;
 
 <script>
 
+fetch('https://api.countapi.xyz/hit/thinker-honey/visits')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('visitor-count').textContent = data.value;
+  });
 
-  fetch('https://api.countapi.xyz/hit/https://kelmfaker.github.io/thinker-honey/visits')
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('visitor-count').textContent = data.value;
-    });
 
 // إذا تم إرسال الطلب مسبقًا عبر واتساب
 window.addEventListener("DOMContentLoaded", () => {
