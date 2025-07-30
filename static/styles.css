@@ -218,6 +218,8 @@ border-top-right-radius: 5px;
   color: #9e3301;
   font-weight: 700;
     font-size: 16px ;
+      letter-spacing: 6px;
+
 
 }
 
@@ -237,7 +239,6 @@ border-top-right-radius: 5px;
   padding: 10px;
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: 6px;
 }
 
 
@@ -597,7 +598,7 @@ border-left: 4px solid #e6c200;
 }
 
 .footer-title{
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
 }
 .footer-title span{
@@ -605,7 +606,7 @@ border-left: 4px solid #e6c200;
 }
 
 .footer .social-icon a{
-    font-size: 12px;
+    font-size: 10px;
     padding: 0 12px 0 0;
     color: bisque;
 }
@@ -676,6 +677,7 @@ border-left: 4px solid #e6c200;
   z-index: 2; /* فوق الصور */
   text-align: center;
   color: #482f1e;
+  font-size: 12px;
 }
 
 
